@@ -1,0 +1,39 @@
+{
+  "autoPrefixer": {
+    "active": true,
+    "browsers": [
+      "last 2 versions",
+      "> 5%",
+      "ie 9"
+    ]
+  },
+  "debug": false,
+  "domain": null,
+  "lintScripts": false,
+  "modelSource": null,
+  "optimiseImages": true,
+  "optimiseSVG": true,
+  "preprocessorLocations": "assets",
+  "preprocessorScriptOutput": "assets/scripts",
+  "preprocessorStyleOutput": "assets/css",
+  "projectDescription": "Altel store",
+  "projectName": "altel-store",
+  "publishedId": "12899",
+  "sass": {
+    "globbing": true,
+    "lineNumbers": false,
+    "outputStyle": "compact",
+    "precision": 14,
+    "sourceMap": false,
+    "useLibSass": false
+  },
+  "serverHostname": null,
+  "serverPort": null,
+  "simpleModePartnerServer": null,
+  "templateDefaultLayout": "layout",
+  "templateDefaultPage": "index",
+  "templateDirectory": "templates",
+  "type": "mixture",
+  "useCompass": false,
+  "password": "ohmycss"
+}

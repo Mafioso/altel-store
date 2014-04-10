@@ -1,0 +1,71 @@
+{% block title %}Online store | Altel{% endblock %}
+
+{% block content %}
+<div class="l-container">
+  <section class="box-group">
+    <div class="l-col d1-2">
+      <div class="box box--ratio">
+        <div class="box-content slides">
+          <div class="slides-item active cover-media" style="background-image: url({{ 'b.jpg' | asset_url }})">
+          </div>
+          <div class="slides-item" style="background-image: url({{ 'c.jpg' | asset_url }})">
+
+          </div>
+          <div class="slides-item">
+
+          </div>
+          <div class="box-footer">
+            a b c
+          </div>
+        </div>
+      </div>
+    </div><div class="l-col d1-2">
+      <div class="l-col d1-2">
+        <a class="box box--ratio" href="#">
+          <div class="box-background"></div>
+          <div class="box-content">
+            <div class="cover-media box-icon-phone">
+              <div class="box-footer">
+                Телефоны
+              </div>
+            </div>
+          </div>
+        </a>
+      </div><div class="l-col d1-2">
+        <a class="box box--ratio" href="#">
+          <div class="box-background"></div>
+          <div class="box-content">
+            <div class="cover-media box-icon-tablet">
+              <div class="box-footer">
+                Планшеты
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      <a class="box box--ratio ratio-2-1" href="#">
+        <div class="box-background"></div>
+        <div class="box-content">
+          <div class="cover-media box-icon-device">
+            <div class="box-footer">
+              Устройства
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <div class="box">
+      <div class="box-content" style="background-image: url({{ 'a.jpg' | asset_url }});">
+        <div class="cover-body cover-overlay">
+          <h1>Some heading</h1>
+          <p class="caption">Some message</p>
+          <a class="btn btn--cta" href="#">Tralala</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+
+{% endblock %}

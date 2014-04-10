@@ -1,0 +1,31 @@
+.rwd-table
+  width: 100% // takes all available space
+  margin-bottom: 2rem
+  text-align: left
+  tr
+    border-top: 1px solid
+    border-bottom: 1px solid
+  th
+    display: none
+  td
+    display: block
+    &:first-child
+      padding-top: 1rem // some spacing for mobile version
+    &:last-child
+      padding-bottom: 1rem
+    &:before
+      display: inline-block
+      min-width: 6em // optional, makes thing a bit readable
+      font-weight: bold
+      content: attr(data-th)": "
+      @include bp-min($break-2)
+        display: none // hide on tablets
+  th,td
+    @include bp-min($break-2)
+      display: table-cell // show on tablets
+      padding: .5rem
+      &:first-child,&:last-child
+        padding: .5rem
+
+// Credits:
+// http://codepen.io/evergreenv/pen/LtFAv

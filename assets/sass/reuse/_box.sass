@@ -1,0 +1,60 @@
+%abs
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+
+.box-group
+  padding-top: 1.5rem
+
+.box
+  position: relative
+  display: block
+  overflow: hidden
+  &-background
+    @extend %accelerate
+    @extend %transition
+    @extend %abs
+    margin: .25rem
+    background-color: $accent
+    border-radius: .25rem
+    opacity: 0
+    transform: translate3d(0,-.25rem,0)
+    a.box:hover &
+      opacity: 1
+      transform: translate3d(0,0,0)
+  &-content
+    @extend %accelerate
+    @extend %transition
+    margin: .5rem
+    overflow: hidden
+    background-color: $box-background
+    background-position: 50% 50%
+    background-size: cover
+    border-radius: .25rem
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.2)
+    background-clip: padding-box
+    a.box:hover &
+      transform: translate3d(0,-.5rem,0)
+  &-footer
+    @extend %abs
+    top: auto
+    padding: .5rem 1rem
+
+  &--ratio
+    @extend %abs
+    &:before
+      display: block
+      padding-top: 100%
+      content: ""
+    .box-content
+      @extend %abs
+
+a.box
+  color: $secondary-text
+
+.ratio-2-1:before
+  padding-top: 50%
+.ratio-3-1:before
+  padding-top: 1/3*100%

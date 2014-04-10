@@ -1,0 +1,80 @@
+//
+// Core - Settings centers on two things:
+// 1) @font-face declarations
+// 2) Variables
+//
+
+// BREAKPOINTS, up to some device width. http://screensiz.es/
+$break-1:       320       // 320px, iPhone 4/5 max (mobile)
+$break-2:       768       // +448, 768px, iPad 3/4 max (tablet)
+$break-3:       1280      // +512, 1280px, MBP-12 13-inch (desktop)
+$break-4:       1600      // +320, 1600px, Dell Inspirion (large desktop)
+$breakpoints:   (0, $break-1, $break-2, $break-3, $break-4)
+
+// SIZES
+// Grid
+$grid-cols: 12 !default
+
+// Root font-sizes. Set to half desired line-height of body text.
+$rootsize-0: 12
+$rootsize-1: 14
+$rootsize-2: 16
+$rootsize-3: 18
+$rootsize-4: 20
+$rootsizes: ($rootsize-0, $rootsize-1, $rootsize-2, $rootsize-3, $rootsize-4)
+
+// Max-width values for text-containers
+// $maxwidth-1:
+// $maxwidth-2:
+// $maxwidth-3:
+// $maxwidth-4:
+
+// Relative to breakpoints
+$fontsize-caption:  (12, 14, 16, 18, 20)
+$fontsize-body:     (14, 16, 18, 20, 22)
+$fontsize-h1:       (51, 53, 55, 57, 59)
+$fontsize-h2:       (42, 44, 46, 48, 50)
+$fontsize-h3:       (31, 33, 35, 37, 39)
+$fontsize-h4:       (26, 28, 30, 32, 34)
+$fontsize-h5:       (19, 21, 23, 25, 27)
+$fontsize-h6:       (16, 18, 20, 22, 24)
+
+// $fontsize-body:     (16, 17, 18, 20, 22)
+// $fontsize-caption:  (12, 14, 16, 17, 18)
+// $fontsize-h1:       (28, 30, 32, 36, 40)
+// $fontsize-h2:       (22, 24, 26, 30, 34)
+// $fontsize-h3:       (20, 22, 24, 28, 30)
+// $fontsize-h4:       (18, 20, 22, 26, 28)
+// $fontsize-h5:       (17, 19, 21, 24, 26)
+// $fontsize-h6:       (16, 17, 18, 20, 22)
+
+// COLORS
+// normal text
+$primary-text: #56565c
+$secondary-text: #a5acb0
+$accent: #ed0088
+// secondary text
+// warning text
+// error text
+// ok text
+// link
+// link-hover
+// link-active
+// a number of backgrounds
+$viewport-background: #f0f0f0
+$sidebar-background: #fff
+$box-background: #fff
+
+// FONTS
+
+// OTHER VARS
+$image-path:            "/assets/img/" !default
+$fallback-extension:    "png" !default
+$retina-suffix:         "@2x"
+$footer-height:         6rem
+$sidebar-width:         16rem
+$sidebar-header-height: 5rem
+$sidebar-footer-height: 4rem
+
+// Credits:
+// https://github.com/designbyjake/sassline

@@ -1,0 +1,94 @@
+//
+// Core - Helpers consists of:
+// 1) Functions
+// 2) Mixins
+// 3) Keyframe Animations
+// 4) Extends
+//
+
+// Get column width
+// TODO: Add warning if $span is not a valid number
+// TODO: Maybe add context for nested coloumns
+@function span($span)
+  $width: ($span / $grid-cols)*100%
+  @return $width
+
+// Construct a grid
+@mixin grid($name)
+  .#{$name}1-12
+    width: span(1)
+  .#{$name}2-12,.#{$name}1-6
+    width: span(2)
+  .#{$name}3-12,.#{$name}1-4
+    width: span(3)
+  .#{$name}4-12,.#{$name}1-3
+    width: span(4)
+  .#{$name}5-12
+    width: span(5)
+  .#{$name}6-12,.#{$name}3-6,.#{$name}2-4,.#{$name}1-2
+    width: span(6)
+  .#{$name}7-12
+    width: span(7)
+  .#{$name}8-12,.#{$name}4-6,.#{$name}2-3
+    width: span(8)
+  .#{$name}9-12,.#{$name}3-4
+    width: span(9)
+  .#{$name}10-12,.#{$name}5-6
+    width: span(10)
+  .#{$name}11-12
+    width: span(11)
+  .#{$name}1
+    width: span(12)
+
+// E.g. use for intermediate breakpoints like tablets
+@mixin bp-max($point)
+  @media only screen and (max-width: #{$point/16*1em})
+    @content
+
+// E.g. use for large desktops in order set max-width on container
+@mixin bp-min($point)
+  @media only screen and (min-width: #{$point/16*1em})
+    @content
+
+// Font-size in rems
+@mixin fs($value, $context)
+  font-size: #{$value / $context}rem
+// @mixin fs-map($map, $size, $context)
+//   @include fs(map-get($map, $size), $context)
+// @mixin fs-list($list, $index, $context)
+//   @include fs(nth($list, $index), $context)
+@mixin fs-propagate($sizes, $contexts, $breakpoints)
+  @include fs(nth($sizes, 1), nth($contexts, 1))
+  @for $i from 2 through length($breakpoints)
+    @include bp-min(nth($breakpoints, $i))
+      @include fs(nth($sizes, $i), nth($contexts, $i))
+
+// Root-size in %
+@mixin rs($value)
+  font-size: $value/16*100%
+@mixin rs-propagate($sizes, $breakpoints)
+  @include rs(nth($sizes, 1))
+  @for $i from 2 through length($breakpoints)
+    @include bp-min(nth($breakpoints, $i))
+      @include rs(nth($sizes, $i))
+
+@mixin background-image($name)
+  background-image: url(#{$image-path}/#{$name}.svg)
+  .no-svg &
+    background-image: url(#{$image-path}/#{$name}.#{$fallback-extension})
+    @media only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5)
+      background-image: url(#{$image-path}/#{$name}#{$retina-suffix}.#{$fallback-extension})
+
+@mixin box-icon($name)
+  @include background-image($name)
+  &:after,
+  &:hover
+    @include background-image($name + '-hover')
+
+%accelerate
+  transform: translate3d(0,0,0)
+  backface-visibility: hidden
+  perspective: 1000
+
+%transition
+  transition: opacity, transform, .1s linear

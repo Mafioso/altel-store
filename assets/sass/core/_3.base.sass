@@ -1,0 +1,86 @@
+//
+// Core - Base sets any base-level styles for tags, such as p or blockquote, beyond what's included in the reset or normalize. Text styles set here reflect the most common appearance of that tag in the design.
+//
+
+*, *:before, *:after
+  box-sizing: border-box
+
+html,
+body
+  height: 100%
+  overflow: hidden
+  -webkit-overflow-scrolling: none
+
+html
+  @include rs-propagate($rootsizes, $breakpoints)
+
+body
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+  @include fs-propagate($fontsize-body, $rootsizes, $breakpoints)
+  line-height: 2rem
+  color: $primary-text
+  cursor: default
+
+// a
+
+p
+  margin: 0 0 2rem // one line after
+  font-feature-settings: "kern" 1, "onum" 1, "liga" 1
+
+h1,h2,h3,h4,h5,h6
+  margin: 0
+  font-style: normal
+  letter-spacing: -.1rem
+  font-feature-settings: "dlig" 1, "liga" 1, "lnum" 1, "kern" 1
+
+ul,ol
+  padding: 0
+  margin: 0 0 2rem
+  li
+    margin-left: 2rem
+    font-feature-settings: "kern" 1, "onum" 1, "liga" 1
+    @include bp-min($break-1)
+      margin-left: 0
+
+b,strong,.bold
+  font-weight: bold
+
+em,i,.italic
+  font-style: italic
+
+small,.caption
+  @include fs-propagate($fontsize-caption, $rootsizes, $breakpoints)
+
+// spacing for captions
+h1, .c-h1, h2, .c-h2, h3, .c-h3, img
+  + .caption
+    margin-top: 0
+
+blockquote
+  margin: 0 0 2rem
+  p
+    padding-left: 2rem
+    font-style: italic
+    border-left: .5rem solid
+
+hr
+  margin: 1rem 0 1rem
+  border: 0
+  border-bottom: 1px solid
+
+code, pre
+// TODO: Style code and pre tags
+
+img
+  display: inline-block
+  height: auto
+  max-width: 100%
+  padding: 0
+  margin: 0
+  line-height: 0
+
+figure
+  margin: 0
+
+// Credits:
+// https://github.com/designbyjake/sassline

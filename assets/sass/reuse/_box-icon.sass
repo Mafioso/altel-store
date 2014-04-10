@@ -1,0 +1,19 @@
+%box-icon
+  background-position: 50% 50%
+  background-repeat: no-repeat
+  background-size: auto 50%
+  &:after
+    content: ''
+    opacity: 0
+
+.box-icon-phone
+  @extend %box-icon
+  @include box-icon('box-icons/phone')
+
+.box-icon-tablet
+  @extend %box-icon
+  @include box-icon('box-icons/tablet')
+
+.box-icon-device
+  @extend %box-icon
+  @include box-icon('box-icons/device')

@@ -1,0 +1,55 @@
+//
+// Just like Core - Content, the Core - Layout gives you a higher level of abstraction for your modules.
+//
+// Note: The l- prefix is an implicit module. There is no l base module; it's only used as a prefix for the layout modules. This is borrowed from SMACSS, which uses the l- convention in its layout section.
+//
+
+%l-container
+  position: relative
+  width: 100%
+  padding-left: 1rem
+  padding-right: 1rem
+  margin: auto
+
+.l-container
+  @extend %l-container
+  @include bp-min($break-4)
+    // don't extend further for large desktop
+    width: $break-4/$rootsize-4*1rem
+
+%l-col, .l-col
+  display: inline-block
+  vertical-align: top
+
+%l-gutter, .l-gutter
+  padding-left: 1rem
+  padding-right: 1rem
+%l-gutter-s, .l-gutter-s
+  padding-left: .5rem
+  padding-right: .5rem
+
+%l-extend-l, .l-extend-l
+  margin-left: -1rem
+%l-extend-r, .l-extend-r
+  margin-right: -1rem
+%l-extend-lr, .l-extend-lr
+  margin-left: -1rem
+  margin-right: -1rem
+
+%l-fluffy-s, .l-fluffy-s
+  padding: 1rem .5rem
+
+// default
+@include grid("d")
+@include bp-min($break-1)
+  // mobile, small
+  @include grid("s")
+@include bp-min($break-2)
+  // tablets, medium
+  @include grid("m")
+@include bp-min($break-3)
+  // desktop, large
+  @include grid("l")
+@include bp-min($break-4)
+  // large desktop, extra-large
+  @include grid("xl")

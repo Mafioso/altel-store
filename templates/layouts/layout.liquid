@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Empty{% endblock %}</title>
+  <!-- TODO: Add description! -->
+  <meta name="description" content="">
+  <link rel="shortcut icon" type="image/ico" href="/favicon.ico" />
+
+  {{ "app.css" | asset_url | stylesheet_tag }}
+</head>
+<body class="{% block body-class %}{% endblock %}">
+  <nav class="sidebar">
+    {% include "sidebar-nav" %}
+  </nav>
+  <div class="viewport">
+    <div class="viewport-body">
+      {% block content %}{% endblock %}
+    </div>
+    <div class="viewport-footer">
+      {% include "footer" %}
+    </div>
+  </div>
+  {% block scripts %}{% endblock %}
+  {{ "app.js" | asset_url | script_tag }}
+</body>
+</html>

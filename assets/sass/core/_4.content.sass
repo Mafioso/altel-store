@@ -1,0 +1,57 @@
+//
+// Core - Content and Core - Layout are the bridge between base-level tags and modules. They give you the ability to set up abstractions that make contextual tweaks easier.
+//
+// The difference between Core - Content and Core - Layout is that Core - Content applies mainly to typography (fonts, colors), while Core - Layout applies to just that, layout (margin, padding, sizing, positioning).
+//
+// Note: The c- prefix is an implicit module. There is no c base module; it's only used as a prefix for the content modules.
+//
+
+h1,.c-h1,%c-h1
+  padding-top: 1rem
+  @include fs-propagate($fontsize-h1, $rootsizes, $breakpoints)
+  line-height: 4rem
+h2,.c-h2,%c-h2
+  padding-top: 1rem
+  @include fs-propagate($fontsize-h2, $rootsizes, $breakpoints)
+  line-height: 3.5rem
+h3,.c-h3,%c-h3
+  padding-top: 1rem
+  @include fs-propagate($fontsize-h3, $rootsizes, $breakpoints)
+  line-height: 3rem
+h4,.c-h4,%c-h4
+  padding-top: 1rem
+  @include fs-propagate($fontsize-h4, $rootsizes, $breakpoints)
+  line-height: 3rem
+h5,.c-h5,%c-h5
+  padding-top: 1rem
+  @include fs-propagate($fontsize-h5, $rootsizes, $breakpoints)
+h6,.c-h6,%c-h6
+  padding-top: 1rem
+  @include fs-propagate($fontsize-h6, $rootsizes, $breakpoints)
+
+%c-text-s,.c-text-s
+  @include fs-propagate($fontsize-caption, $rootsizes, $breakpoints)
+
+h1,.c-h1,%c-h1,h2,.c-h2,%c-h2,img
+  p,ol,ul,blockquote p,pre
+    margin-top: 2rem
+
+%c-upper,.c-upper
+  text-transform: uppercase
+  letter-spacing: 0.1rem
+
+.c-small-caps
+  letter-spacing: 0.1rem
+  // font-feature-settings: "smcp" 1, "kern" 1
+
+.c-text-c
+  text-align: center
+
+.c-text-l
+  text-align: left
+
+.c-text-r
+  text-align: right
+
+// Credits:
+// https://github.com/designbyjake/sassline
