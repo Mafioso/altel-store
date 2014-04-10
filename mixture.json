@@ -13,6 +13,7 @@
   "modelSource": null,
   "optimiseImages": true,
   "optimiseSVG": true,
+  "password": "ohmycss",
   "preprocessorLocations": "assets",
   "preprocessorScriptOutput": "assets/scripts",
   "preprocessorStyleOutput": "assets/css",
@@ -34,6 +35,5 @@
   "templateDefaultPage": "index",
   "templateDirectory": "templates",
   "type": "mixture",
-  "useCompass": false,
-  "password": "ohmycss"
+  "useCompass": false
 }

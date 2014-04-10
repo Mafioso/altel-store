@@ -4,19 +4,55 @@
 <div class="l-container">
   <section class="box-group">
     <div class="l-col d1-2">
-      <div class="box box--ratio">
-        <div class="box-content slides">
-          <div class="slides-item active cover-media" style="background-image: url({{ 'b.jpg' | asset_url }})">
+      <div class="box box--ratio" id="carousel" data-ride="carousel">
+        <div class="box-content carousel">
+          <div class="item active cover-media" style="background-image: url({{ 'b.jpg' | asset_url }})">
+            <div class="cover-overlay cover-overlay--spread"></div>
+            <div class="carousel-item-caption box-footer">
+              <div class="cic-userpic">
+                {{ "42x42" | placeholder | image_tag }}
+              </div>
+              <a href="http://instagram.com/altel4g" target="_blank">altel4g</a>
+              <p>
+                В #Алматы прошла закрытая презентация #Samsung #GalaxyS5 для партнеров, СМИ и блогеров. Совсем скоро новый флагман поступит в продажу и его получат те, кто оформил предзаказ. Кстати, #GalaxyS5 поддерживает сеть #ALTEL4G #LTE. #topsecretkz
+              </p>
+            </div>
           </div>
-          <div class="slides-item" style="background-image: url({{ 'c.jpg' | asset_url }})">
-
+          <div class="item cover-media" style="background-image: url({{ 'c.jpg' | asset_url }})">
+            <div class="cover-overlay cover-overlay--spread"></div>
+            <div class="carousel-item-caption box-footer">
+              <div class="cic-userpic">
+                {{ "42x42" | placeholder | image_tag }}
+              </div>
+              <a href="http://instagram.com/altel4g" target="_blank">altel4g</a>
+              <p>
+                С праздником дорогие девочки, девушки, женщины!!! #8Марта #праздник #выходные #весна #instakz #insta_kz #kaztagram
+              </p>
+            </div>
           </div>
-          <div class="slides-item">
-
+          <div class="item cover-media" style="background-image: url({{ 'd.jpg' | asset_url }})">
+            <div class="cover-overlay cover-overlay--spread"></div>
+            <div class="carousel-item-caption box-footer">
+              <div class="cic-userpic">
+                {{ "42x42" | placeholder | image_tag }}
+              </div>
+              <a href="http://instagram.com/altel4g" target="_blank">altel4g</a>
+              <p>
+                Доброе утро друзья! А что вы любите на завтрак? #ALTEL #ALTEL4G #4G #LTE
+              </p>
+            </div>
           </div>
-          <div class="box-footer">
-            a b c
-          </div>
+        </div>
+        <div class="box-footer">
+          <ul class="carousel-indicators">
+            <li class="active" data-target="#carousel" data-slide-to="0">
+              <span class="circle"></span>
+            </li><li data-target="#carousel" data-slide-to="1">
+              <span class="circle"></span>
+            </li><li data-target="#carousel" data-slide-to="2">
+              <span class="circle"></span>
+            </li>
+          </ul>
         </div>
       </div>
     </div><div class="l-col d1-2">

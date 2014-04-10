@@ -1,0 +1,49 @@
+.carousel
+  .item
+    @extend %accelerate
+    z-index: 100
+    overflow: hidden
+    color: white
+    border-radius: .25rem
+    opacity: 0
+    transition: opacity .5s ease-in-out
+    &.active
+      opacity: 1
+      z-index: 101
+  &-indicators
+    margin: 0
+    text-align: center
+    list-style-type: none
+    li
+      display: inline-block
+      padding: .5rem
+      cursor: pointer
+.circle
+  display: block
+  width: .75rem
+  height: .75rem
+  background-color: white
+  border-radius: 50%
+  opacity: .5
+  .carousel-indicators li:hover &,
+  .active &
+    opacity: 1
+
+.carousel-item-caption
+  @extend %accelerate
+  @extend %c-text-s
+  font-weight: 500
+  line-height: 1.5rem
+  opacity: .25
+  transition: opacity .08s linear
+  .box:hover &
+    opacity: 1
+  a
+    color: $secondary-text
+.cic-userpic
+  float: left
+  width: 2rem
+  height: 2rem
+  margin: .5rem .5rem .25rem .25rem
+  img
+    display: block

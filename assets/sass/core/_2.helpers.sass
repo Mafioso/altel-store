@@ -82,7 +82,7 @@
 @mixin box-icon($name)
   @include background-image($name)
   &:after,
-  &:hover
+  a.box:hover &
     @include background-image($name + '-hover')
 
 %accelerate
@@ -92,3 +92,10 @@
 
 %transition
   transition: opacity, transform, .1s linear
+
+%abs
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0

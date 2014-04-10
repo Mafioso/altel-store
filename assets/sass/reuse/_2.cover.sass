@@ -5,9 +5,13 @@
     background-position: 50% 50%
     background-repeat: no-repeat
     background-size: cover
+    background-clip: padding-box
   &-body
     position: relative
     padding: 2rem
   &-overlay
     color: white
     background-color: rgba(0,0,0,.4)
+    &--spread
+      @extend %abs
+      background: linear-gradient(bottom, rgba(0,0,0,.60), rgba(0,0,0,.2))
