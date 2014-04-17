@@ -7,33 +7,19 @@
 //
 
 h1,.c-h1,%c-h1
-  padding-top: 1rem
-  @include fs-propagate($fontsize-h1, $rootsizes, $breakpoints)
-  line-height: 4rem
+  @include fs-construct($h1, 4, 2)
+
 h2,.c-h2,%c-h2
-  padding-top: 1rem
-  @include fs-propagate($fontsize-h2, $rootsizes, $breakpoints)
-  line-height: 3.5rem
+  @include fs-construct($h2, 4, 2)
+
 h3,.c-h3,%c-h3
-  padding-top: 1rem
-  @include fs-propagate($fontsize-h3, $rootsizes, $breakpoints)
-  line-height: 3rem
-h4,.c-h4,%c-h4
-  padding-top: 1rem
-  @include fs-propagate($fontsize-h4, $rootsizes, $breakpoints)
-  line-height: 3rem
-h5,.c-h5,%c-h5
-  padding-top: 1rem
-  @include fs-propagate($fontsize-h5, $rootsizes, $breakpoints)
-h6,.c-h6,%c-h6
-  padding-top: 1rem
-  @include fs-propagate($fontsize-h6, $rootsizes, $breakpoints)
+  @include fs-construct($h3, 3, 2)
 
-%c-text-m,.c-text-m
-  @include fs-propagate($fontsize-body, $rootsizes, $breakpoints)
+h4,h5,h6,p,%c-body,.c-body,ul,ol
+  @include fs-construct($body, 2, 2)
 
-%c-text-s,.c-text-s
-  @include fs-propagate($fontsize-caption, $rootsizes, $breakpoints)
+caption, %c-caption,.c-caption
+  @include fs-construct($caption, 2, 2)
 
 h1,.c-h1,%c-h1,h2,.c-h2,%c-h2,img
   p,ol,ul,blockquote p,pre

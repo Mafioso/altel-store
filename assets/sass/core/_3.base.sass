@@ -12,22 +12,43 @@ body
   -webkit-overflow-scrolling: none
 
 html
-  @include rs-propagate($rootsizes, $breakpoints)
+  // root 12
+  font-size: nth($rootsizes, 1)/16*100%
+  // everything bigger than $break-1; root 14
+  @media only screen and (min-width: #{($break-1 + 1)/16*1em})
+    font-size: nth($rootsizes, 2)/16*100%
+  // everything bigger than $break-2; root 17
+  @media only screen and (min-width: #{($break-2 + 1)/16*1em})
+    font-size: nth($rootsizes, 3)/16*100%
+  // everything bigger than $break-3; root 21
+  @media only screen and (min-width: #{($break-3 + 1)/16*1em})
+    font-size: nth($rootsizes, 4)/16*100%
+  // everything bigger than $break-4; just fixes the size
+  // @media only screen and (min-width: #{($break-4 + 1)/16*1em})
+
 
 body
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-  @include fs-propagate($fontsize-body, $rootsizes, $breakpoints)
+  font-size: nth($body, 1)*1rem
   line-height: 2rem
   color: $primary-text
   cursor: default
+  @media only screen and (min-width: #{($break-1 + 1)/16*1em})
+    font-size: nth($body, 2)*1rem
+  @media only screen and (min-width: #{($break-2 + 1)/16*1em})
+    font-size: nth($body, 3)*1rem
+  @media only screen and (min-width: #{($break-3 + 1)/16*1em})
+    font-size: nth($body, 4)*1rem
 
 // a
 
 p
-  margin: 0 0 2rem // one line after
+  padding: 0
+  margin: 0
   font-feature-settings: "kern" 1, "onum" 1, "liga" 1
 
 h1,h2,h3,h4,h5,h6
+  padding: 0
   margin: 0
   font-style: normal
   letter-spacing: -.1rem
@@ -35,12 +56,10 @@ h1,h2,h3,h4,h5,h6
 
 ul,ol
   padding: 0
-  margin: 0 0 2rem
+  margin: 0
   li
     margin-left: 2rem
     font-feature-settings: "kern" 1, "onum" 1, "liga" 1
-    @include bp-min($break-1)
-      margin-left: 0
 
 b,strong,.bold
   font-weight: bold
@@ -48,13 +67,13 @@ b,strong,.bold
 em,i,.italic
   font-style: italic
 
-small,.caption
-  @include fs-propagate($fontsize-caption, $rootsizes, $breakpoints)
+// small,.caption
+  // font-size: #{$caption}rem
 
 // spacing for captions
-h1, .c-h1, h2, .c-h2, h3, .c-h3, img
-  + .caption
-    margin-top: 0
+// h1, .c-h1, h2, .c-h2, h3, .c-h3, img
+//   + .caption
+//     margin-top: 0
 
 a
   color: inherit
@@ -72,7 +91,7 @@ hr
   border: 0
   border-bottom: 1px solid
 
-code, pre
+// code, pre
 // TODO: Style code and pre tags
 
 img

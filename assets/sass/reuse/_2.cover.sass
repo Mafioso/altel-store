@@ -1,17 +1,17 @@
 .cover
   position: relative
-  &-media
-    @extend %abs
-    background-position: 50% 50%
-    background-repeat: no-repeat
-    background-size: cover
-    background-clip: padding-box
-  &-body
-    position: relative
-    padding: 2rem
-  &-overlay
-    color: white
-    background-color: rgba(0,0,0,.4)
-    &--spread
-      @extend %abs
-      background: linear-gradient(bottom, rgba(0,0,0,.60), rgba(0,0,0,.2))
+.cover-media
+  @extend %abs
+  background-position: 50% 50%
+  background-repeat: no-repeat
+  background-size: cover
+  background-clip: padding-box
+.cover-body
+  position: relative
+  padding: 2rem
+.cover-overlay
+  color: white
+  background-color: rgba(0,0,0,.4)
+.cover-overlay--spread
+  @extend %abs
+  background: linear-gradient(bottom, rgba(0,0,0,.60), rgba(0,0,0,.2))

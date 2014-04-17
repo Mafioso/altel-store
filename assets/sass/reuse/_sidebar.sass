@@ -1,6 +1,6 @@
 .sidebar
   @extend %accelerate
-  @extend %c-text-s
+  // @extend %c-text-s
   position: absolute
   top: 0
   bottom: 0
@@ -11,57 +11,57 @@
   color: $secondary-text
   background-color: $sidebar-background
   box-shadow: 0 0 2px 0 rgba(0,0,0,.2)
-  &-body
-    position: absolute
-    top: $sidebar-header-height
-    right: 0
-    bottom: $sidebar-footer-height
-    left: 0
+.sidebar-body
+  position: absolute
+  top: $sidebar-header-height
+  right: 0
+  bottom: $sidebar-footer-height
+  left: 0
+  display: block
+  overflow: auto
+  -webkit-overflow-scrolling: touch
+  .btn
+    color: $secondary-text
+    &:hover
+      color: $primary-text
+.sidebar-footer
+  position: absolute
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 300
+  display: block
+  height: $sidebar-footer-height
+  background-color: darken(#eaeaea, 5%)
+.sidebar-nav
+  margin-bottom: 1rem
+  list-style-type: none
+.sidebar-nav-title
+  @extend %c-upper
+  padding: 0 1rem
+.sidebar-nav-item
+  display: block
+  padding: 0 1rem
+  margin-right: 1rem
+  border-radius: 0 .25rem .25rem 0
+  .sidebar-nav-item--action
+    color: $primary-text
+  &[data-state=is-active]
+    background-color: darken(#eaeaea, 10%)
+  &:hover
+    background-color: darken(#eaeaea, 15%)
+.sidebar-nav-notice
+  float: right
+.sidebar-nav-user
+  display: block
+  padding: 1rem
+.sidebar-nav-user-pic
+  float: left
+  width: 2rem
+  img
     display: block
-    overflow: auto
-    -webkit-overflow-scrolling: touch
-    .btn
-      color: $secondary-text
-      &:hover
-        color: $primary-text
-  &-footer
-    position: absolute
-    right: 0
-    bottom: 0
-    left: 0
-    z-index: 300
-    display: block
-    height: $sidebar-footer-height
-    background-color: darken(#eaeaea, 5%)
-  &-nav
-    margin-bottom: 1rem
-    list-style-type: none
-    &-title
-      @extend %c-upper
-      padding: 0 1rem
-    &-item
-      display: block
-      padding: 0 1rem
-      margin-right: 1rem
-      border-radius: 0 .25rem .25rem 0
-      &--action
-        color: $primary-text
-      &[data-state=is-active]
-        background-color: darken(#eaeaea, 10%)
-      &:hover
-        background-color: darken(#eaeaea, 15%)
-      &-notice
-        float: right
-    &-user
-      display: block
-      padding: 1rem
-      &-pic
-        float: left
-        width: 2rem
-        img
-          display: block
-      &-info
-        padding-left: .5rem
-        overflow: hidden
-        text-overflow: ellipsis
-        white-space: nowrap
+.sidebar-nav-info
+  padding-left: .5rem
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap

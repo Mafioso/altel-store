@@ -5,44 +5,44 @@
   position: relative
   display: block
   overflow: hidden
-  &-background
-    @extend %accelerate
-    @extend %transition
-    @extend %abs
-    margin: .25rem
-    background-color: $accent
-    border-radius: .25rem
-    opacity: 0
+.box-background
+  @extend %accelerate
+  @extend %transition
+  @extend %abs
+  margin: .25rem
+  background-color: $accent
+  border-radius: .25rem
+  opacity: 0
+  transform: translate3d(0,-.25rem,0)
+  a.box:hover &
+    opacity: 1
+    transform: translate3d(0,0,0)
+.box-content
+  @extend %accelerate
+  @extend %transition
+  margin: .5rem
+  overflow: hidden
+  background-color: $box-background
+  background-position: 50% 50%
+  background-size: cover
+  border-radius: .25rem
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,.2)
+  background-clip: padding-box
+  a.box:hover &
     transform: translate3d(0,-.25rem,0)
-    a.box:hover &
-      opacity: 1
-      transform: translate3d(0,0,0)
-  &-content
-    @extend %accelerate
-    @extend %transition
-    margin: .5rem
-    overflow: hidden
-    background-color: $box-background
-    background-position: 50% 50%
-    background-size: cover
-    border-radius: .25rem
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.2)
-    background-clip: padding-box
-    a.box:hover &
-      transform: translate3d(0,-.25rem,0)
-  &-footer
-    @extend %abs
-    top: auto
-    padding: .5rem 1rem
+.box-footer
+  @extend %abs
+  top: auto
+  padding: .5rem 1rem
 
-  &--ratio
+.box--ratio
+  @extend %abs
+  &:before
+    display: block
+    padding-top: 100%
+    content: ""
+  .box-content
     @extend %abs
-    &:before
-      display: block
-      padding-top: 100%
-      content: ""
-    .box-content
-      @extend %abs
 
 a.box
   color: $secondary-text
