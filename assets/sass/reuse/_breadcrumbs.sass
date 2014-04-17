@@ -1,8 +1,10 @@
 .breadcrumbs-list
-  // @extend %c-text-s
-  margin: 0
+  @extend %c-caption
+  margin: 1rem 0 0
   list-style-type: none
   li
+    margin: 0
+    padding-right: .5rem
     display: inline-block
     &:last-child .breadcrumbs-list-item:after
       display: none
@@ -11,8 +13,8 @@
       color: $primary-text
 .breadcrumbs-list-item
   display: block
-  padding: .25rem
   color: $secondary-text
+  text-decoration: none
   &:after
     margin-left: .5rem
     content: '/'

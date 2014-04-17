@@ -36,6 +36,23 @@ label,
   &[data-state="is-wrong"]
     border-color: red
 
+.f-select
+  @extend .f-input-text
+  -webkit-appearance: none
+  background: $box-background
+  padding-right: 2rem
+.f-label--select
+  position: relative
+  &:after
+    position: absolute
+    top: 0
+    right: .5rem
+    display: block
+    width: 2rem
+    text-align: center
+    content: '\2026'
+
+
 .f-input-search,
 input[type=search]
   @extend .f-input-text
