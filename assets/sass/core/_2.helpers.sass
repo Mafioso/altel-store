@@ -10,10 +10,6 @@
 @function rem($value, $context)
   @return ($value / $context) * 1rem
 
-// Returns a value in rem, that is used to move text to baseline
-@function shift($font-size, $line-height, $aspect-value: .52)
-  @return ($line-height - $font-size * $aspect-value)*.5
-
 // Get column width
 // TODO: Add warning if $span is not a valid number
 // TODO: Maybe add context for nested coloumns
@@ -57,23 +53,6 @@
 @mixin bp-min($point)
   @media only screen and (min-width: #{$point/16*1em})
     @content
-
-@mixin fs-construct-helper($values, $line-height, $trailer, $index)
-  $font-size: nth($values, $index)
-  $shift: shift($font-size, $line-height)
-  padding-top: $shift * 1rem
-  margin-bottom: ($trailer - $shift) * 1rem
-  font-size: $font-size * 1rem
-  line-height: $line-height * 1rem
-
-@mixin fs-construct($values, $line-height, $trailer)
-  @include fs-construct-helper($values, $line-height, $trailer, 1)
-  @media only screen and (min-width: #{($break-1 + 1)/16*1em})
-    @include fs-construct-helper($values, $line-height, $trailer, 2)
-  @media only screen and (min-width: #{($break-2 + 1)/16*1em})
-    @include fs-construct-helper($values, $line-height, $trailer, 3)
-  @media only screen and (min-width: #{($break-3 + 1)/16*1em})
-    @include fs-construct-helper($values, $line-height, $trailer, 4)
 
 @mixin background-image($name)
   background-image: url(#{$image-path}/#{$name}.svg)

@@ -29,26 +29,19 @@ html
 
 body
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-  font-size: nth($body, 1)*1rem
+  font-size: $body
   line-height: 2rem
   color: $primary-text
   cursor: default
-  @media only screen and (min-width: #{($break-1 + 1)/16*1em})
-    font-size: nth($body, 2)*1rem
-  @media only screen and (min-width: #{($break-2 + 1)/16*1em})
-    font-size: nth($body, 3)*1rem
-  @media only screen and (min-width: #{($break-3 + 1)/16*1em})
-    font-size: nth($body, 4)*1rem
-
 // a
 
 p
   padding: 0
-  margin: 0
+  margin: 0 0 2rem
   font-feature-settings: "kern" 1, "onum" 1, "liga" 1
 
 h1,h2,h3,h4,h5,h6
-  padding: 0
+  padding: 1rem 0 0
   margin: 0
   font-style: normal
   letter-spacing: -.1rem
@@ -56,7 +49,7 @@ h1,h2,h3,h4,h5,h6
 
 ul,ol
   padding: 0
-  margin: 0
+  margin: 0 0 2rem
   li
     margin-left: 2rem
     font-feature-settings: "kern" 1, "onum" 1, "liga" 1
@@ -66,9 +59,6 @@ b,strong,.bold
 
 em,i,.italic
   font-style: italic
-
-// small,.caption
-  // font-size: #{$caption}rem
 
 // spacing for captions
 // h1, .c-h1, h2, .c-h2, h3, .c-h3, img
@@ -80,16 +70,16 @@ a
   text-decoration: underline
 
 blockquote
-  margin: 0 0 2rem
+  margin: 2rem 0 0 0
   p
     padding-left: 2rem
     font-style: italic
     border-left: .5rem solid
 
 hr
-  margin: 1rem 0 1rem
+  margin: (1rem - $px) 0 1rem
   border: 0
-  border-bottom: 1px solid
+  border-bottom: $px solid
 
 // code, pre
 // TODO: Style code and pre tags

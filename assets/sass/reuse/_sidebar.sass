@@ -1,6 +1,6 @@
 .sidebar
   @extend %accelerate
-  // @extend %c-text-s
+  @extend %c-caption
   position: absolute
   top: 0
   bottom: 0
@@ -18,6 +18,7 @@
   bottom: $sidebar-footer-height
   left: 0
   display: block
+  padding: 0 1rem
   overflow: auto
   -webkit-overflow-scrolling: touch
   .btn
@@ -36,32 +37,13 @@
 .sidebar-nav
   margin-bottom: 1rem
   list-style-type: none
+  >li
+    margin: 0
 .sidebar-nav-title
   @extend %c-upper
   padding: 0 1rem
 .sidebar-nav-item
   display: block
-  padding: 0 1rem
-  margin-right: 1rem
-  border-radius: 0 .25rem .25rem 0
-  .sidebar-nav-item--action
-    color: $primary-text
-  &[data-state=is-active]
-    background-color: darken(#eaeaea, 10%)
-  &:hover
-    background-color: darken(#eaeaea, 15%)
-.sidebar-nav-notice
-  float: right
-.sidebar-nav-user
-  display: block
-  padding: 1rem
-.sidebar-nav-user-pic
-  float: left
-  width: 2rem
-  img
-    display: block
-.sidebar-nav-info
-  padding-left: .5rem
-  overflow: hidden
-  text-overflow: ellipsis
-  white-space: nowrap
+.sidebar-nav-item--action
+  @extend %c-caption
+  color: $primary-text

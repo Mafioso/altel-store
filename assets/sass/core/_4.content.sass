@@ -7,30 +7,36 @@
 //
 
 h1,.c-h1,%c-h1
-  @include fs-construct($h1, 4, 2)
+  font-size: $h1
+  line-height: 3rem
 
 h2,.c-h2,%c-h2
-  @include fs-construct($h2, 4, 2)
+  font-size: $h2
+  line-height: 3rem
 
 h3,.c-h3,%c-h3
-  @include fs-construct($h3, 3, 2)
+  font-size: $h3
+  line-height: 3rem
 
 h4,h5,h6,p,%c-body,.c-body,ul,ol
-  @include fs-construct($body, 2, 2)
+  font-size: $body
+  line-height: 2rem
+  letter-spacing: 0
 
-caption, %c-caption,.c-caption
-  @include fs-construct($caption, 2, 2)
+caption, .caption, %c-caption,.c-caption
+  font-size: $caption
+  line-height: 2rem
 
 h1,.c-h1,%c-h1,h2,.c-h2,%c-h2,img
   p,ol,ul,blockquote p,pre
-    margin-top: 2rem
+    margin-bottom: 2rem
 
 %c-upper,.c-upper
   text-transform: uppercase
-  letter-spacing: 0.1rem
+  letter-spacing: $px
 
 .c-small-caps
-  letter-spacing: 0.1rem
+  letter-spacing: $px
   // font-feature-settings: "smcp" 1, "kern" 1
 
 .c-text-c
