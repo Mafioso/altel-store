@@ -9,13 +9,13 @@
   overflow: auto
   -webkit-overflow-scrolling: touch
   background-color: $viewport-background
-  &-body
-    min-height: 100%
-    margin-bottom: -1*$footer-height
-    &:after
-      display: block
-      height: $footer-height
-      content: ""
-  &-footer
-    position: relative
+.viewport-body
+  min-height: 100%
+  margin-bottom: -1*$footer-height
+  &:after
+    display: block
     height: $footer-height
+    content: ""
+.viewport-footer
+  position: relative
+  height: $footer-height

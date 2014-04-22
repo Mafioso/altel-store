@@ -1,6 +1,6 @@
 .sidebar
   @extend %accelerate
-  @extend %c-text-s
+  @extend %c-caption
   position: absolute
   top: 0
   bottom: 0
@@ -10,58 +10,90 @@
   overflow: hidden
   color: $secondary-text
   background-color: $sidebar-background
-  box-shadow: 0 0 2px 0 rgba(0,0,0,.2)
-  &-body
-    position: absolute
-    top: $sidebar-header-height
-    right: 0
-    bottom: $sidebar-footer-height
-    left: 0
-    display: block
-    overflow: auto
-    -webkit-overflow-scrolling: touch
-    .btn
-      color: $secondary-text
-      &:hover
-        color: $primary-text
-  &-footer
-    position: absolute
-    right: 0
-    bottom: 0
-    left: 0
-    z-index: 300
-    display: block
-    height: $sidebar-footer-height
-    background-color: darken(#eaeaea, 5%)
-  &-nav
-    margin-bottom: 1rem
-    list-style-type: none
-    &-title
-      @extend %c-upper
-      padding: 0 1rem
-    &-item
-      display: block
-      padding: 0 1rem
-      margin-right: 1rem
-      border-radius: 0 .25rem .25rem 0
-      &--action
-        color: $primary-text
-      &[data-state=is-active]
-        background-color: darken(#eaeaea, 10%)
-      &:hover
-        background-color: darken(#eaeaea, 15%)
-      &-notice
-        float: right
-    &-user
-      display: block
-      padding: 1rem
-      &-pic
-        float: left
-        width: 2rem
-        img
-          display: block
-      &-info
-        padding-left: .5rem
-        overflow: hidden
-        text-overflow: ellipsis
-        white-space: nowrap
+  border-right: $px solid $viewport-background
+.sidebar-body
+  position: absolute
+  top: $sidebar-header-height
+  right: 0
+  // bottom: $sidebar-footer-height
+  bottom: 0
+  left: 0
+  display: block
+  padding: 0 1rem
+  overflow: auto
+  -webkit-overflow-scrolling: touch
+  .btn
+    color: $secondary-text
+    &:hover
+      color: $primary-text
+.sidebar-footer
+  position: absolute
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 300
+  display: block
+  height: $sidebar-footer-height
+  background-color: darken(#eaeaea, 5%)
+.sidebar-nav
+  margin-bottom: 1rem
+  list-style-type: none
+  >li
+    margin: 0
+.sidebar-nav-title
+  @extend %c-upper
+  padding: 0 1rem
+.sidebar-nav-item
+  display: block
+.sidebar-nav-item--action
+  @extend %c-caption
+  color: $primary-text
+
+.sidebar-extension
+  @extend %abs
+  right: auto
+  left: $sidebar-width
+  // left: 0
+  z-index: 102
+  width: $sidebar-width
+  background-color: $sidebar-background
+  transform: translateX(-$sidebar-width + .25rem)
+  border-right: $px solid $viewport-background
+.sidebar-extension-open .sidebar-extension
+  transform: translateX(0)
+  // left: $sidebar-width
+  // z-index: 102
+  animation: sidebar-extension-open .2s cubic-bezier(.390, .575, .565, 1.000)
+.sidebar-extension-close .sidebar-extension
+  transform: translateX(-$sidebar-width + .25rem)
+  animation: sidebar-extension-close .2s cubic-bezier(.390, .575, .565, 1.000)
+
+.sidebar-extension-h
+  @extend %c-h3
+  padding-top: 0
+
+.sidebar-extension-dismiss
+  @extend %abs
+  top: 1rem
+  right: 1rem
+  bottom: auto
+  left: auto
+  width: 2rem
+  height: 2rem
+  background-color: black
+
+@keyframes sidebar-extension-open
+  from
+    transform: translateX(-$sidebar-width + .25rem)
+    // left: 0
+  to
+    transform: translateX(0)
+    // left: $sidebar-width
+
+@keyframes sidebar-extension-close
+  from
+    transform: translateX(0)
+    // left: $sidebar-width
+  to
+    transform: translateX(-$sidebar-width + .25rem)
+    // left: 0

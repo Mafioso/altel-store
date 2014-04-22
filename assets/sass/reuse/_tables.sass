@@ -2,9 +2,8 @@
   width: 100% // takes all available space
   margin-bottom: 2rem
   text-align: left
-  tr
-    border-top: 1px solid $secondary-text
-    border-bottom: 1px solid $secondary-text
+  tr:nth-child(2n)
+    background-color: $viewport-background
   th
     display: none
   td
@@ -16,8 +15,9 @@
     &:before
       display: inline-block
       min-width: 6em // optional, makes thing a bit readable
+      padding-right: 1rem
       font-weight: bold
-      content: attr(data-th)": "
+      content: attr(data-th)
       @include bp-min($break-2)
         display: none // hide on tablets
   th,td

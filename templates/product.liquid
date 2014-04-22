@@ -5,9 +5,9 @@
   <nav class="breadcrumbs">
     <ul class="breadcrumbs-list">
       <li>
-        <a class="breadcrumbs-list-item" href="#">Телефоны</a>
+        <a class="breadcrumbs-list-item" href="/products">Телефоны</a>
       </li><li>
-        <a class="breadcrumbs-list-item" href="#">Apple</a>
+        <a class="breadcrumbs-list-item" href="/products">Apple</a>
       </li><li>
         <a class="breadcrumbs-list-item" href="#">Apple iPhone 5c, White 16Gb (Unlocked)</a>
       </li>
@@ -32,13 +32,13 @@
         <div class="l-col d1-6 c-text-c">
           <ul class="product-carousel-switcher">
             <li>
-              {{ "preview-1.png" | asset_url | image_tag }}
+              <img class="product-preview" src="{{ 'preview-1.png' | asset_url }}" alt="" />
             </li>
             <li>
-              {{ "preview-2.png" | asset_url | image_tag }}
+              <img class="product-preview" src="{{ 'preview-2.png' | asset_url }}" alt="" />
             </li>
             <li>
-              {{ "preview-3.png" | asset_url | image_tag }}
+              <img class="product-preview" src="{{ 'preview-3.png' | asset_url }}" alt="" />
             </li>
           </ul>
 
@@ -71,37 +71,50 @@
           <br>
           <form>
             <div class="f-field">
-              <label class="f-label" for="">Size</label>
-              <input class="f-input-text" type="text" />
+              <label for="" class="f-label">Size</label>
+              <label class="f-label f-label--select" for="">
+                <select class="f-select">
+                  <option value="">Black</option>
+                </select>
+              </label>
             </div>
             <div class="f-field">
               <label class="f-label" for="">Количество</label>
               <input class="f-input-text" type="number" value="1" />
             </div>
             <div class="f-field">
+              <label class="f-label" for="">Рекомендуемый тариф</label>
+
+              <div class="subscription-plan">
+                <h4>Безлимитный</h4>
+                <p class="caption">$10 per month, unlimited calls</p>
+              </div>
+
+              <a class="caption" href="#">Choose a different plan</a>
+
+            </div>
+            <div class="f-field">
               <button class="btn btn--cta btn--fill">Добавить в корзину</button>
             </div>
           </form>
-          sharing block
+
+          <a href="#" class="caption c-upper">Условия доставки</a>
+
         </div>
       </section>
 
       <section class="product-description">
-        <div class="readable l-gutter">
-          <ul>
-            <li>
-              Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit sit amet non magna.
-            </li>
-            <li>
-              Maecenas faucibus mollis interdum. Aenean lacinia bibendum nulla sed consectetur. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-            </li>
-          </ul>
+        <div class="readable readable--left l-gutter">
+          <h2 class="title-with-separator">Progress is a beautiful thing</h2>
+          <p>
+            iPhone 5 set a precedent. Apple engineers and designers managed to compress first-of-their-kind technologies inside a space that’s a mere 7.6 millimeters thin and 112 grams light. A feat like that required designing or redesigning multiple components. And it resulted in an incredibly thin, impressively light, extraordinarily powerful smartphone. After coming so far with iPhone 5, it was a perfect place to start with iPhone 5s. And while the engineering challenge was significant, we succeeded in adding more to it without making iPhone 5s bigger or heavier.
+          </p>
         </div>
       </section>
 
 
       <section class="product-specification">
-        <table class="rwd-table c-text-s">
+        <table class="rwd-table caption">
           <tbody>
             <tr>
               <th>Ipsum Venenatis Magna</th>
@@ -160,7 +173,7 @@
         <div class="l-col d2-3 l-middle">
           <h2 class="product-reviews-title">Отзывы о товаре</h2>
         </div><div class="l-col d1-3 c-text-r l-middle">
-          <button class="btn btn--cta">Написать отзыв</button>
+          <button class="btn btn--cta btn--no-trailer">Написать отзыв</button>
         </div>
 
 
@@ -199,9 +212,11 @@
                   <dd>Aenean lacinia bibendum nulla sed consectetur.</dd>
                 <dt>Комментарий</dt>
                   <dd>
-                    <p>
-                      Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor.
-                    </p>
+                    <div class="readable readable--left">
+                      <p>
+                        Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor.
+                      </p>
+                    </div>
                   </dd>
               </dl>
             </section>

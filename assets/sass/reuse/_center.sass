@@ -1,0 +1,21 @@
+.center-this
+  @extend %abs
+  display: block
+  text-align: center
+  white-space: nowrap
+  overflow-y: auto
+  // some magic number
+  letter-spacing: -0.35em
+  &:before, &:after
+    display: inline-block
+    height: 100%
+    vertical-align: middle
+    content: ''
+
+.this
+  display: inline-block
+  max-width: 100%
+  letter-spacing: 0
+  text-align: left
+  white-space: normal
+  vertical-align: middle

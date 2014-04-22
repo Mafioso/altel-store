@@ -6,6 +6,10 @@
 // 4) Extends
 //
 
+// Return value in rem units
+@function rem($value, $context)
+  @return ($value / $context) * 1rem
+
 // Get column width
 // TODO: Add warning if $span is not a valid number
 // TODO: Maybe add context for nested coloumns
@@ -50,28 +54,6 @@
   @media only screen and (min-width: #{$point/16*1em})
     @content
 
-// Font-size in rems
-@mixin fs($value, $context)
-  font-size: #{$value / $context}rem
-// @mixin fs-map($map, $size, $context)
-//   @include fs(map-get($map, $size), $context)
-// @mixin fs-list($list, $index, $context)
-//   @include fs(nth($list, $index), $context)
-@mixin fs-propagate($sizes, $contexts, $breakpoints)
-  @include fs(nth($sizes, 1), nth($contexts, 1))
-  @for $i from 2 through length($breakpoints)
-    @include bp-min(nth($breakpoints, $i))
-      @include fs(nth($sizes, $i), nth($contexts, $i))
-
-// Root-size in %
-@mixin rs($value)
-  font-size: $value/16*100%
-@mixin rs-propagate($sizes, $breakpoints)
-  @include rs(nth($sizes, 1))
-  @for $i from 2 through length($breakpoints)
-    @include bp-min(nth($breakpoints, $i))
-      @include rs(nth($sizes, $i))
-
 @mixin background-image($name)
   background-image: url(#{$image-path}/#{$name}.svg)
   .no-svg &
@@ -84,6 +66,15 @@
   &:after,
   a.box:hover &
     @include background-image($name + '-hover')
+
+%clearfix
+  zoom: 1
+  &:before,
+  &:after
+    content: " "
+    display: table
+  &:after
+    clear: both
 
 %accelerate
   transform: translate3d(0,0,0)

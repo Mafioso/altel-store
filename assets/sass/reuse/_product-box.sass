@@ -1,0 +1,19 @@
+.product-box
+  @extend %c-caption
+.product-box-h
+  @extend %c-body
+  padding: 1rem
+.product-box-price,
+.product-box-cta
+  @extend %abs
+  top: auto
+  bottom: 0
+  padding-bottom: 1rem
+  text-align: center
+.product-box-cta
+  opacity: 0
+.product-box:hover
+  .product-box-price
+    opacity: 0
+  .product-box-cta
+    opacity: 1

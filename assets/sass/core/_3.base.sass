@@ -3,6 +3,7 @@
 //
 
 *, *:before, *:after
+  // -moz-box-sizing: border-box
   box-sizing: border-box
 
 html,
@@ -12,22 +13,36 @@ body
   -webkit-overflow-scrolling: none
 
 html
-  @include rs-propagate($rootsizes, $breakpoints)
+  // root 12
+  font-size: nth($rootsizes, 1)/16*100%
+  // everything bigger than $break-1; root 14
+  @media only screen and (min-width: #{($break-1 + 1)/16*1em})
+    font-size: nth($rootsizes, 2)/16*100%
+  // everything bigger than $break-2; root 17
+  @media only screen and (min-width: #{($break-2 + 1)/16*1em})
+    font-size: nth($rootsizes, 3)/16*100%
+  // everything bigger than $break-3; root 21
+  @media only screen and (min-width: #{($break-3 + 1)/16*1em})
+    font-size: nth($rootsizes, 4)/16*100%
+  // everything bigger than $break-4; just fixes the size
+  // @media only screen and (min-width: #{($break-4 + 1)/16*1em})
+
 
 body
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
-  @include fs-propagate($fontsize-body, $rootsizes, $breakpoints)
+  font-size: $body
   line-height: 2rem
   color: $primary-text
   cursor: default
-
 // a
 
 p
-  margin: 0 0 2rem // one line after
+  padding: 0
+  margin: 0 0 2rem
   font-feature-settings: "kern" 1, "onum" 1, "liga" 1
 
 h1,h2,h3,h4,h5,h6
+  padding: 1rem 0 0
   margin: 0
   font-style: normal
   letter-spacing: -.1rem
@@ -39,8 +54,6 @@ ul,ol
   li
     margin-left: 2rem
     font-feature-settings: "kern" 1, "onum" 1, "liga" 1
-    @include bp-min($break-1)
-      margin-left: 0
 
 b,strong,.bold
   font-weight: bold
@@ -48,31 +61,28 @@ b,strong,.bold
 em,i,.italic
   font-style: italic
 
-small,.caption
-  @include fs-propagate($fontsize-caption, $rootsizes, $breakpoints)
-
 // spacing for captions
-h1, .c-h1, h2, .c-h2, h3, .c-h3, img
-  + .caption
-    margin-top: 0
+// h1, .c-h1, h2, .c-h2, h3, .c-h3, img
+//   + .caption
+//     margin-top: 0
 
 a
   color: inherit
-  text-decoration: underline
+  text-decoration: none
 
 blockquote
-  margin: 0 0 2rem
+  margin: 2rem 0 0 0
   p
     padding-left: 2rem
     font-style: italic
     border-left: .5rem solid
 
 hr
-  margin: 1rem 0 1rem
+  margin: 1rem 0 (1rem - $px)
   border: 0
-  border-bottom: 1px solid
+  border-bottom: $px solid
 
-code, pre
+// code, pre
 // TODO: Style code and pre tags
 
 img

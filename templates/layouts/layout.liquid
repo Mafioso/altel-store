@@ -15,6 +15,44 @@
   <nav class="sidebar">
     {% include "sidebar-nav" %}
   </nav>
+  <section class="sidebar-extension">
+    <div class="center-this">
+      <div class="this zoom">
+        <div class="l-fluffy">
+          <h1 class="sidebar-extension-h">Корзина</h1>
+          <ul class="cart">
+            {% for i in (1..10) %}
+            <li class="cart-item">
+              <div class="cart-item-image">
+                {{ "90x90" | placeholder | image_tag }}
+              </div>
+              <div class="cart-item-description">
+                <a href="#" class="cart-item-remove">&times;</a>
+                <div class="cart-item-name">Sollicitudin Portaddfas asdfasda</div>
+                <div class="cart-item-option">black/white</div>
+                <div class="cart-item-price">
+                  13049 T
+                  <span class="cart-item-quantity">&times; 1</span>
+                </div>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+          <p class="f-field">
+            <strong>Total:</strong>
+            <span class="split-value c-accent">130490 T</span>
+          </p>
+          <div class="f-field c-text-c">
+            <a href="#" class="btn btn--cta">Checkout</a>
+          </div>
+          <div class="f-field c-text-c">
+            <a href="#" class="btn btn--compact">Continue shopping</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="" class="sidebar-extension-dismiss">&times;</a>
+  </section>
   <div class="viewport">
     <div class="viewport-body">
       {% block content %}{% endblock %}
@@ -23,10 +61,10 @@
       {% include "footer" %}
     </div>
   </div>
+  <div class="dev-grid"></div>
   {% block scripts %}{% endblock %}
   {{ "jquery.min.js" | asset_url | script_tag }}
   {{ "carousel.min.js" | asset_url | script_tag }}
-  {{ "baseliner.js" | asset_url | script_tag }}
   {{ "app.js" | asset_url | script_tag }}
 </body>
 </html>

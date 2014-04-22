@@ -13,46 +13,48 @@
 
 .l-container
   @extend %l-container
-  @include bp-min($break-4)
+  // @include bp-min($break-4)
     // don't extend further for large desktop
-    width: $break-4/$rootsize-4*1rem
+    // width: $break-4/$rootsize-4*1rem
 
 %l-col, .l-col
   display: inline-block
   vertical-align: top
 
-%l-gutter, .l-gutter
+
+%l-gutter-l, .l-gutter-l
   padding-left: 1rem
+%l-gutter-r, .l-gutter-r
   padding-right: 1rem
-%l-gutter-s, .l-gutter-s
-  padding-left: .5rem
-  padding-right: .5rem
+%l-gutter, .l-gutter
+  padding-right: 1rem
+  padding-left: 1rem
 
 %l-bleed-l, .l-bleed-l
   margin-left: -1rem
 %l-bleed-r, .l-bleed-r
   margin-right: -1rem
-%l-bleed-lr, .l-bleed-lr
-  margin-left: -1rem
+%l-bleed-both, .l-bleed
   margin-right: -1rem
+  margin-left: -1rem
 
-%l-fluffy-s, .l-fluffy-s
+%l-fluffy, .l-fluffy
+  padding: 1rem
+%l-fluffy-tiny, .l-fluffy-tiny
   padding: 1rem .5rem
+%l-fluffy-vertical, .l-fluffy-vertical
+  padding: 1rem 0
+
+.zoom
+  width: 100%
 
 %l-middle, .l-middle
   vertical-align: middle
 
-// default
 @include grid("d")
-@include bp-min($break-1)
-  // mobile, small
+@media only screen and (min-width: #{($break-1)/16*1em})
   @include grid("s")
-@include bp-min($break-2)
-  // tablets, medium
+@media only screen and (min-width: #{($break-2)/16*1em})
   @include grid("m")
-@include bp-min($break-3)
-  // desktop, large
+@media only screen and (min-width: #{($break-3)/16*1em})
   @include grid("l")
-@include bp-min($break-4)
-  // large desktop, extra-large
-  @include grid("xl")

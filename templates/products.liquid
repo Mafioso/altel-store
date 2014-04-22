@@ -1,0 +1,57 @@
+{% block content %}
+<div class="l-container">
+  <h1 class="title-with-separator">Телефоны</h1>
+  <div class="l-col d1-4 l-gutter-r">
+    <h2 class="c-body">Refine by:</h2>
+    <div class="refine-section">
+      <h3 class="refine-section-h">Brand</h3>
+      <ul class="refine-section-body">
+        {% for i in (1..10) %}
+        <li>
+          <input id="id{{i}}" type="checkbox" />
+          <label for="id{{i}}" class="refine-section-item">
+            Brand (18)
+          </label>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="refine-section">
+      <h3 class="refine-section-h">Rating</h3>
+      <div class="star-progress">
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+        <span class="star">☆</span>
+        <div class="star-progress-bar" style="width: 80%;">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+        </div>
+      </div>
+    </div>
+    <div class="refine-section">
+      <a href="#">Clear all &times;</a>
+    </div>
+
+  </div><div class="l-col d3-4">
+    {% for i in (1..10) %}<div class="l-col d1-3">
+      <div class="box box--ratio ratio-2-3">
+        <div class="box-content">
+          <div class="cover-media box-icon-phone product-box">
+            <a href="/product" class="cover-media"></a>
+            <h2 class="product-box-h">Porta Ligula</h2>
+            <div class="product-box-price">12040 T</div>
+            <div class="product-box-cta">
+              <button class="btn btn--cta btn--compact">Выбрать тариф</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>{% endfor %}
+  </div>
+</div>
+{% endblock %}

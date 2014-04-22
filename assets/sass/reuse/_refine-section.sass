@@ -1,0 +1,53 @@
+.refine-section
+  @extend %c-caption
+  padding-bottom: (.5rem - $px)
+  border-top: 1px solid $secondary-text
+.refine-section-h
+  @extend %c-caption
+  padding-top: .5rem
+  letter-spacing: 0
+.refine-section-body
+  list-style-type: none
+  margin: 0
+  max-height: 12rem
+  overflow-y: auto
+  >li
+    margin: 0
+
+.refine-section input[type=checkbox]
+  display: none
+.refine-section-item
+  position: relative
+  width: 100%
+  overflow: hidden
+  text-overflow: ellipsis
+  white-space: nowrap
+  padding-left: 1.25rem
+  &:before
+    position: absolute
+    top: .5rem
+    left: 0
+    display: inline-block
+    width: 1rem
+    height: 1rem
+    background-color: white
+    border: $px solid $secondary-text
+    border-radius: $r
+    content: ''
+  &:after
+    position: absolute
+    top: .4rem
+    left: .1rem
+    display: block
+    width: 1.1rem
+    height: 1.1rem
+    text-align: center
+    content: ''
+    @include background-image('form-icons/checkmark')
+    background-size: cover
+    background-position: 50% 50%
+    opacity: 0
+input[type=checkbox]:checked +.refine-section-item:before
+  border-color: $accent
+input[type=checkbox]:checked +.refine-section-item:after
+  opacity: 1

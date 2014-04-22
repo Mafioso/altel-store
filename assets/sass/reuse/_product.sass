@@ -1,48 +1,76 @@
 .product-header
+  position: relative
   padding-bottom: .5rem
-  margin-bottom: 1rem
-  border-bottom: 3px solid $accent
+  margin-bottom: 1.5rem
+  &:after
+    position: absolute
+    bottom: 0
+    width: 100%
+    display: block
+    height: 2*$px
+    background-color: $accent
+    content: ''
 
 .product-title
-  @extend %c-h5
-  line-height: 2rem
+  @extend %c-h2
 
 .product-price
-  @extend %c-h5
+  @extend %c-h2
+  padding-top: 1rem
   color: $accent
-  &-currency
-    @extend %c-text-m
-    float: right
-    color: $secondary-text
+.product-price-currency
+  @extend %c-body
+  line-height: 3rem
+  float: right
+  color: $secondary-text
 
 .product-carousel-switcher
   list-style-type: none
   padding: 0
   margin: 0
 
+.product-preview
+  display: block
+  width: 4rem
+  margin: 0 1rem 1rem
+  float: right
+
 .product-description,
 .product-reviews
   padding-top: 1rem
   margin-top: 1rem
-  border-top: 1px solid $accent
 
 .product-reviews
   border-top-width: 3px
 .product-reviews-header
-  margin-bottom: 1rem
-  border-bottom: 1px solid $secondary-text
+  position: relative
+  padding-bottom: .5rem
+  margin-bottom: 1.5rem
+  &:after
+    position: absolute
+    bottom: 0
+    width: 100%
+    display: block
+    height: 2*$px
+    background-color: $secondary-text
+    content: ''
   .caption
     margin-bottom: 0
 .product-reviews-title
-  @extend %c-h5
+  @extend %c-h3
   padding-top: 0
   margin-top: 0
   line-height: 2rem
 
 .product-reviews-list
+  @extend %c-caption
   padding: 1rem 0 0 0
   margin: 0
   list-style-type: none
+  p
+    @extend %c-caption
+  >li
+    margin: 0
 .product-review-header
   position: relative
 .product-review-author
@@ -57,9 +85,19 @@
   margin-left: 2.25rem
   background-color: $viewport-background
 .product-review dl
-  @extend %c-text-s
   margin: 0
   dt
     font-weight: bold
   dd
     margin-left: 2.25rem
+
+
+.subscription-plan
+  padding: 1rem
+  background-color: $viewport-background
+  border-radius: 3*$px
+  h4
+    margin: 0
+    padding: 0
+  > :last-child
+    margin-bottom: 0
