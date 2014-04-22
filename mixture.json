@@ -7,6 +7,8 @@
       "ie 9"
     ]
   },
+  "customRuby": true,
+  "customRubyPath": "/Users/Vadim/.rvm/rubies/ruby-2.1.1|/Users/Vadim/.rvm/gems/ruby-2.1.1",
   "debug": false,
   "domain": null,
   "lintScripts": false,
@@ -34,7 +36,5 @@
   "templateDefaultPage": "index",
   "templateDirectory": "templates",
   "type": "mixture",
-  "useCompass": true,
-  "customRuby": true,
-  "customRubyPath": "/Users/Vadim/.rvm/rubies/ruby-2.1.1|/Users/Vadim/.rvm/gems/ruby-2.1.1"
+  "useCompass": true
 }
