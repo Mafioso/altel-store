@@ -1,17 +1,18 @@
 .btn,%btn
   position: relative
   display: inline-block
-  padding: .25rem 1rem
-  margin-bottom: .5rem
-  line-height: (2rem - $px)
+  padding: 0 1rem
+  line-height: (3rem - $px)
   text-align: center
   text-decoration: none
   cursor: pointer
   border: $px solid
-  border-radius: 3*$px
+  border-radius: $r
   outline: none
 .btn--compact
-  padding: 0 .25rem
+  @extend %c-caption
+  padding: 0 .5rem
+  line-height: (2rem - $px)
 .btn--fill
   width: 100%
 .btn--cta

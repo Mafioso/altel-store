@@ -1,0 +1,48 @@
+.sidebar-extension
+  .cart
+    display: block
+    width: 100%
+    list-style-type: none
+    max-height: 11rem
+    overflow-y: scroll
+    margin-bottom: 1rem
+    >li
+      margin: 0
+  .cart-item-image
+    width: 4rem
+    height: 4rem
+  // .cart-item-description
+
+.cart-item
+  position: relative
+  width: 100%
+  min-height: 2rem
+  overflow: hidden
+  border-bottom: $px solid $secondary-text
+  margin-bottom: .5rem - $px
+.cart-item-image
+  @extend %abs
+  top: .5rem
+  right: auto
+  bottom: auto
+.cart-item-description
+  padding-left: 4.5rem
+.cart-item-name
+  padding-right: 1rem
+  height: 2rem
+  overflow: hidden
+  font-weight: bold
+  text-overflow: ellipsis
+  white-space: nowrap
+  width: 100%
+.cart-item-remove
+  @extend %abs
+  left: auto
+  bottom: auto
+.cart-item-option
+  @extend %c-caption
+  line-height: 1.5rem
+.cart-item-price
+  color: $accent
+.cart-item-quantity
+  color: $primary-text
