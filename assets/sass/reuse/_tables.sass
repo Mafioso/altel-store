@@ -4,28 +4,37 @@
   text-align: left
   tr:nth-child(2n)
     background-color: $viewport-background
+  tr.highlight
+    background-color: $secondary-text
   th
     display: none
   td
     display: block
+    position: relative
     &:first-child
       padding-top: 1rem // some spacing for mobile version
     &:last-child
       padding-bottom: 1rem
     &:before
       display: inline-block
-      min-width: 6em // optional, makes thing a bit readable
+      min-width: 10em // optional, makes thing a bit readable
       padding-right: 1rem
       font-weight: bold
       content: attr(data-th)
       @include bp-min($break-2)
         display: none // hide on tablets
+    &.rwd-table-no-th:before
+      display: none
   th,td
     @include bp-min($break-2)
       display: table-cell // show on tablets
       padding: .5rem
       &:first-child,&:last-child
         padding: .5rem
+
+.rwd-table--top
+  tr
+    vertical-align: top
 
 // Credits:
 // http://codepen.io/evergreenv/pen/LtFAv

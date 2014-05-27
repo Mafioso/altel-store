@@ -1,0 +1,91 @@
+{% block content %}
+<div class="l-container">
+    <div class="box">
+        <div class="box-content">
+            <div class="l-gutter">
+                <div class="product-header">
+                    <h1 class="product-title">
+                        My orders
+                    </h1>
+                    <p class="caption">Need help? Call us: ...</p>
+                </div>
+
+                <div class="l-col d2-3">
+                    <div class="f-field">
+                        <h2 class="c-h3 c-h--compact">Recent orders</h2>
+
+                        <table class="rwd-table c-caption">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Date
+                                    </th>
+                                    <th>
+                                        Order number
+                                    </th>
+                                    <th>
+                                    </th>
+                                    <th>
+                                        Status
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        {{ 'now' | date:'%d %B %Y' }}
+                                    </td>
+                                    <td>
+                                        <strong>15983583</strong>
+                                    </td>
+                                    <td>
+                                        <a href="" class="btn btn--compact">View</a>
+                                    </td>
+                                    <td>
+                                        Dispatched
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        {{ 'now' | date:'%d %B %Y' }}
+                                    </td>
+                                    <td>
+                                        <strong>3897538</strong>
+                                    </td>
+                                    <td>
+                                        <a href="" class="btn btn--compact">View</a>
+                                    </td>
+                                    <td>
+                                        Processing
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div><div class="l-col d1-3 l-gutter-l">
+                    <div class="callout f-field">
+                        <ul class="block-list c-caption">
+                            <li>
+                                <a href="/account">My account</a>
+                            </li>
+                            <li>
+                                <a href="/account-orders">My orders</a>
+                            </li>
+                            <li>
+                                <a href="/account-address-book">Address book</a>
+                            </li>
+                            <li>
+                                <a href="/account-details">Account details</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

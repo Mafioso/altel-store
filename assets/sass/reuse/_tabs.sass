@@ -1,0 +1,40 @@
+.tabs
+  list-style-type: none
+  margin: 0 0 1rem
+  >li
+    position: relative
+    margin: 0
+    text-align: center
+    border-bottom: 3px solid $secondary-text
+    &.active
+      border-color: $accent
+      &:after
+        position: absolute
+        bottom: -1.6rem
+        left: 50%
+        width: 0
+        height: 0
+        margin-left: -.8rem
+        border: .8rem solid transparent
+        border-top-color: $accent
+        content: ''
+[data-toggle=tab]
+  @extend %c-caption
+  @extend %c-upper
+  display: block
+  padding: .5rem 1rem
+  overflow: hidden
+  text-decoration: none
+  text-overflow: ellipsis
+  white-space: nowrap
+
+  .active &
+    color: $accent
+
+.tab-pane
+  display: none
+  margin-bottom: 2rem
+  >:last-child
+    margin-bottom: 0
+  &.active
+    display: block

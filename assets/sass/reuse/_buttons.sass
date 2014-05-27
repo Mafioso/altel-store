@@ -1,12 +1,14 @@
 .btn,%btn
   position: relative
   display: inline-block
+  min-width: 6em
   padding: 0 1rem
-  line-height: (3rem - $px)
+  line-height: 3rem
   text-align: center
   text-decoration: none
   cursor: pointer
-  border: $px solid
+  background-color: transparent
+  border: 1px solid
   border-radius: $r
   outline: none
 .btn--compact
@@ -21,5 +23,6 @@
   border-color: $accent
   &:hover
     background-color: darken($accent, 10%)
+    border-color: darken($accent, 10%)
 .btn--no-trailer
   margin-bottom: 0

@@ -1,0 +1,52 @@
+{% block extension %}{% endblock %}
+{% block content %}
+
+<div class="l-container">
+    <div class="box">
+        <div class="box-content">
+            <div class="l-gutter">
+                <header class="product-header">
+                    <h1 class="product-title">Payment</h1>
+                </header>
+
+                <div class="l-col d2-3 l-gutter-r">
+                    <div class="callout">
+                        <h2 class="c-h3 title-with-separator">Checkout Method</h2>
+
+                        <div class="l-col d1-2 l-gutter-r">
+                            <h3 class="c-body f-field">Already registered?</h3>
+                            <form action="">
+                                <div class="f-field">
+                                    <input class="f-input-text" type="text" placeholder="Email" />
+                                </div>
+                                <div class="f-field">
+                                    <input class="f-input-text" type="password" placeholder="Password" />
+                                    <a class="caption" href="#">Forgot your password?</a>
+                                </div>
+                                <div class="f-field">
+                                    <a href="/checkout-billing-information" class="btn btn--cta btn--compact">Login</a>
+                                </div>
+                            </form>
+
+                        </div><div class="l-col d1-2 l-gutter-l">
+                            <h3 class="c-body f-field">New customer?</h3>
+                            <div class="f-field">
+                                <a href="/checkout-billing-information" class="btn btn--cta">Quick registration</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="c-h3 c-secondary">Billing information</h2>
+                    <h2 class="c-h3 c-secondary">Shipping information</h2>
+                    <h2 class="c-h3 c-secondary">Shipping method</h2>
+                    <h2 class="c-h3 c-secondary">Payment information</h2>
+
+                </div><div class="l-col d1-3">
+                    {% include "components/checkout-bag" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

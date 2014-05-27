@@ -1,0 +1,86 @@
+{% block extension %}{% endblock %}
+{% block content %}
+
+<div class="l-container">
+    <div class="box">
+        <div class="box-content">
+            <div class="l-gutter">
+                <header class="product-header">
+                    <h1 class="product-title">Payment</h1>
+                </header>
+
+                <div class="l-col d2-3 l-gutter-r">
+                    <h2 class="c-h3 c-h--compact c-secondary">
+                        <a href="/checkout-method">
+                            Checkout Method
+                            <span class="caption c-light">modify</span>
+                        </a>
+                    </h2>
+
+                    <h2 class="c-h3 c-h--compact c-secondary">
+                        <a href="/checkout-billing-information">
+                            Billing information
+                            <span class="caption c-light">modify</span>
+                        </a>
+                    </h2>
+
+                    <div class="callout">
+                        <h2 class="c-h3 title-with-separator">Shipping information</h2>
+                        <form action="">
+                            <div class="f-field media">
+                                <div class="media-figure media-figure--label">
+                                    <label class="label" for="">First name</label>
+                                </div>
+                                <div class="media-description">
+                                    <input class="f-input-text" type="text" />
+                                </div>
+                            </div>
+                            <div class="f-field media">
+                                <div class="media-figure media-figure--label">
+                                    <label for="">Second name</label>
+                                </div>
+                                <div class="media-description">
+                                    <div class="f-input-text f-input-text--ghost">Somename</div>
+                                </div>
+                            </div>
+                            <div class="f-field media">
+                                <div class="media-figure media-figure--label">
+                                    <label class="f-label--error" for="">Address 2 (optional)</label>
+                                </div>
+                                <div class="media-description">
+                                    <input class="f-input-text" type="text" />
+                                    <p class="caption">What is wrong with this field</p>
+                                </div>
+                            </div>
+                            <div class="callout-footer">
+                                <p class="f-label--error">Form error messages here</p>
+                                <div class="f-field">
+                                    <div class="d1-2 l-middle l-col">
+                                        <label>
+                                            <input type="checkbox" checked />
+                                            <span class="checkbox-mark"></span>
+                                            Ship to this address
+                                        </label>
+                                    </div><div class="d1-2 l-middle l-col c-text-r">
+                                        <a href="/checkout-shipping-method" class="btn btn--cta">Continue</a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <p class="caption"><span class="c-accent">Note:</span> this fields are example, appropriate fields will be propagated, when live.</p>
+                        </form>
+                    </div>
+                    <h2 class="c-h3 c-secondary c-h--compact">Shipping method</h2>
+                    <h2 class="c-h3 c-secondary c-h--compact">Payment information</h2>
+
+                </div><div class="l-col d1-3">
+                    {% include "components/checkout-bag" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

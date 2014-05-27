@@ -1,0 +1,51 @@
+{% block extension %}{% endblock %}
+{% block content %}
+
+<div class="l-container">
+    <div class="box">
+        <div class="box-content">
+            <div class="l-gutter">
+                <header class="product-header">
+                    <h1 class="product-title">Payment</h1>
+                </header>
+
+                <div class="l-col d2-3 l-gutter-r">
+                    <h2 class="c-h3 c-h--compact c-secondary">
+                        <a href="/checkout-method">
+                            Checkout Method
+                            <span class="caption c-light">modify</span>
+                        </a>
+                    </h2>
+
+                    <h2 class="c-h3 c-h--compact c-secondary">
+                        <a href="/checkout-billing-information">
+                            Billing information
+                            <span class="caption c-light">modify</span>
+                        </a>
+                    </h2>
+
+                    <h2 class="c-h3 c-h--compact c-secondary">
+                        <a href="/checkout-shipping-information">
+                            Shipping information
+                            <span class="caption c-light">modify</span>
+                        </a>
+                    </h2>
+
+                    <div class="callout">
+                        <h2 class="c-h3 title-with-separator">Shipping method</h2>
+
+
+                        <p>Payment methods should be described here</p>
+
+                    </div>
+                    <h2 class="c-h3 c-secondary c-h--compact">Payment information</h2>
+
+                </div><div class="l-col d1-3">
+                    {% include "components/checkout-bag" %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

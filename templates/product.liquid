@@ -28,7 +28,9 @@
         </div>
       </header>
 
-      <section>
+      {% include 'components/share-bar' %}
+
+      <section class="product-body">
         <div class="l-col d1-6 c-text-c">
           <ul class="product-carousel-switcher">
             <li>
@@ -90,144 +92,214 @@
                 <p class="caption">$10 per month, unlimited calls</p>
               </div>
 
-              <a class="caption" href="#">Choose a different plan</a>
+              <p class="caption">
+                <a href="#">Choose a different plan</a>
+              </p>
+
 
             </div>
             <div class="f-field">
               <button class="btn btn--cta btn--fill">Добавить в корзину</button>
             </div>
           </form>
-
-          <a href="#" class="caption c-upper">Условия доставки</a>
-
-        </div>
-      </section>
-
-      <section class="product-description">
-        <div class="readable readable--left l-gutter">
-          <h2 class="title-with-separator">Progress is a beautiful thing</h2>
-          <p>
-            iPhone 5 set a precedent. Apple engineers and designers managed to compress first-of-their-kind technologies inside a space that’s a mere 7.6 millimeters thin and 112 grams light. A feat like that required designing or redesigning multiple components. And it resulted in an incredibly thin, impressively light, extraordinarily powerful smartphone. After coming so far with iPhone 5, it was a perfect place to start with iPhone 5s. And while the engineering challenge was significant, we succeeded in adding more to it without making iPhone 5s bigger or heavier.
-          </p>
         </div>
       </section>
 
 
-      <section class="product-specification">
+      <ul class="tabs">
+        <li class="l-col d1-4 active">
+          <a href="#description" data-toggle="tab">Описание</a>
+        </li><li class="l-col d1-4">
+          <a href="#techspecs" data-toggle="tab">Характеристики</a>
+        </li><li class="l-col d1-4">
+          <a href="#reviews" data-toggle="tab">Отзывы</a>
+        </li><li class="l-col d1-4">
+          <a href="#delivery" data-toggle="tab">Условия доставки</a>
+        </li>
+      </ul>
+
+      <div class="tab-content">
+        <div class="tab-pane active" id="description">
+          <section class="product-description readable readable--left l-gutter">
+            <h2 class="title-with-separator">Progress is a beautiful thing</h2>
+            <p>
+              iPhone 5 set a precedent. Apple engineers and designers managed to compress first-of-their-kind technologies inside a space that’s a mere 7.6 millimeters thin and 112 grams light. A feat like that required designing or redesigning multiple components. And it resulted in an incredibly thin, impressively light, extraordinarily powerful smartphone. After coming so far with iPhone 5, it was a perfect place to start with iPhone 5s. And while the engineering challenge was significant, we succeeded in adding more to it without making iPhone 5s bigger or heavier.
+            </p>
+          </section>
+        </div>
+        <div class="tab-pane" id="techspecs">
+          <section class="product-specification">
+            <table class="rwd-table caption">
+              <tbody>
+                <tr>
+                  <th>Ipsum Venenatis Magna</th>
+                  <td data-th="Ipsum Venenatis Magna">Nullam quis risus eget urna mollis ornare vel eu leo.</td>
+                </tr>
+                <tr>
+                  <th>Ipsum Venenatis Magna</th>
+                  <td data-th="Ipsum Venenatis Magna">Nullam quis risus eget urna mollis ornare vel eu leo.</td>
+                </tr>
+                <tr>
+                  <th>Ipsum Venenatis Magna</th>
+                  <td data-th="Ipsum Venenatis Magna">Nullam quis risus eget urna mollis ornare vel eu leo.</td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+        </div>
+        <div class="tab-pane" id="reviews">
+          <section class="product-reviews">
+            <header class="product-reviews-header">
+              <div class="l-col l-gutter l-middle">
+                <button class="btn btn--cta btn--compact">Написать отзыв</button>
+              </div><div class="l-col l-gutter l-middle">
+                <div class="star-progress">
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <span class="star">☆</span>
+                  <div class="star-progress-bar" style="width: 70%;">
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                    <span class="star">★</span>
+                  </div>
+                </div>
+                (34 отзыва)
+
+                <p class="caption">
+                  3.5 out of 5 stars
+                </p>
+              </div>
+            </header>
+
+            <ul class="product-reviews-list">
+              <li class="product-review">
+                <header class="product-review-header">
+                  <div class="product-review-author">
+                    {{ "60x60" | placeholder | image_tag }}
+                  </div>
+                  <div class="product-review-meta">
+                    Username
+                    <span class="split-value">
+                      12 января
+                    </span>
+                  </div>
+                </header>
+                <section class="product-review">
+                  <div class="star-progress">
+                    <span class="star">☆</span>
+                    <span class="star">☆</span>
+                    <span class="star">☆</span>
+                    <span class="star">☆</span>
+                    <span class="star">☆</span>
+                    <div class="star-progress-bar" style="width: 80%;">
+                      <span class="star">★</span>
+                      <span class="star">★</span>
+                      <span class="star">★</span>
+                      <span class="star">★</span>
+                      <span class="star">★</span>
+                    </div>
+                  </div>
+                  <dl>
+                    <dt>Достоинства</dt>
+                      <dd>Aenean lacinia bibendum nulla sed consectetur.</dd>
+                    <dt>Недостатки</dt>
+                      <dd>Aenean lacinia bibendum nulla sed consectetur.</dd>
+                    <dt>Комментарий</dt>
+                      <dd>
+                        <div class="readable readable--left">
+                          <p>
+                            Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor.
+                          </p>
+                        </div>
+                      </dd>
+                  </dl>
+                </section>
+              </li>
+            </ul>
+            <p><a href="#">Все отзывы</a></p>
+          </section>
+        </div>
+        <div class="tab-pane" id="delivery"></div>
+      </div>
+
+      <section id="plans" class="product-plans">
+        <h2>Get the right plan for you</h2>
         <table class="rwd-table caption">
+          <thead>
+            <tr>
+              <th>
+                Data
+              </th>
+              <th>
+                Monthly cost
+              </th>
+              <th>
+                Network speed
+              </th>
+              <th>
+                Minutes / text
+              </th>
+              <th>
+                Phone cost
+              </th>
+              <th>
+
+              </th>
+            </tr>
+          </thead>
           <tbody>
-            <tr>
-              <th>Ipsum Venenatis Magna</th>
-              <td data-th="Ipsum Venenatis Magna">Nullam quis risus eget urna mollis ornare vel eu leo.</td>
+            {% for i in (1..5) %}
+            <tr {% if i == 3 %}class="highlight"{% endif %}>
+              <td data-th="Data:">
+                50 Gb
+              </td>
+              <td class="c-accent" data-th="Monthly cost:">
+                74.99 T
+              </td>
+              <td data-th="Network speed:">
+                4G
+              </td>
+              <td data-th="Minutes / text:">
+                Unlimited / unlimited
+              </td>
+              <td class="c-accent" data-th="Phone cost:">
+                9.99 T
+              </td>
+              <td class="rwd-table-no-th">
+                <a href="#" class="btn btn--cta btn--compact">Continue</a>
+              </td>
             </tr>
-            <tr>
-              <th>Ipsum Venenatis Magna</th>
-              <td data-th="Ipsum Venenatis Magna">Nullam quis risus eget urna mollis ornare vel eu leo.</td>
-            </tr>
-            <tr>
-              <th>Ipsum Venenatis Magna</th>
-              <td data-th="Ipsum Venenatis Magna">Nullam quis risus eget urna mollis ornare vel eu leo.</td>
-            </tr>
+            {% endfor %}
           </tbody>
         </table>
       </section>
 
-      <section class="product-reviews">
-
-        <header class="product-reviews-header">
-          <div class="l-col">
-            <div class="star-progress">
-              <span class="star">☆</span>
-              <span class="star">☆</span>
-              <span class="star">☆</span>
-              <span class="star">☆</span>
-              <span class="star">☆</span>
-              <div class="star-progress-bar" style="width: 70%;">
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
-                <span class="star">★</span>
+      <h2>You may also like:</h2>
+      <section class="product-similar">
+      {% for i in (1..4) %}<div class="l-col d1-4">
+        <div class="box box--ratio ratio-2-3">
+          <div class="box-content">
+            <div class="cover-media box-icon-phone product-box">
+              <a href="/product" class="cover-media"></a>
+              <h2 class="product-box-h">Porta Ligula</h2>
+              <div class="product-box-price">12040 T</div>
+              <div class="product-box-cta">
+                <button class="btn btn--cta btn--compact">Выбрать тариф</button>
               </div>
             </div>
-            (34 отзыва)
-
-            <p class="caption">
-              3.5 out of 5 stars
-            </p>
           </div>
-
-
-          <div class="split-value">
-            Оцените товар:
-            <div class="star-progress">
-              <span class="star">☆</span>
-              <span class="star">☆</span>
-              <span class="star">☆</span>
-              <span class="star">☆</span>
-              <span class="star">☆</span>
-            </div>
-          </div>
-        </header>
-
-        <div class="l-col d2-3 l-middle">
-          <h2 class="product-reviews-title">Отзывы о товаре</h2>
-        </div><div class="l-col d1-3 c-text-r l-middle">
-          <button class="btn btn--cta btn--no-trailer">Написать отзыв</button>
         </div>
+      </div>{% endfor %}
+    </section>
 
-
-        <ul class="product-reviews-list">
-          <li class="product-review">
-            <header class="product-review-header">
-              <div class="product-review-author">
-                {{ "60x60" | placeholder | image_tag }}
-              </div>
-              <div class="product-review-meta">
-                Username
-                <span class="split-value">
-                  12 января
-                </span>
-              </div>
-            </header>
-            <section class="product-review">
-              <div class="star-progress">
-                <span class="star">☆</span>
-                <span class="star">☆</span>
-                <span class="star">☆</span>
-                <span class="star">☆</span>
-                <span class="star">☆</span>
-                <div class="star-progress-bar" style="width: 80%;">
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                  <span class="star">★</span>
-                </div>
-              </div>
-              <dl>
-                <dt>Достоинства</dt>
-                  <dd>Aenean lacinia bibendum nulla sed consectetur.</dd>
-                <dt>Недостатки</dt>
-                  <dd>Aenean lacinia bibendum nulla sed consectetur.</dd>
-                <dt>Комментарий</dt>
-                  <dd>
-                    <div class="readable readable--left">
-                      <p>
-                        Vestibulum id ligula porta felis euismod semper. Donec sed odio dui. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Curabitur blandit tempus porttitor.
-                      </p>
-                    </div>
-                  </dd>
-              </dl>
-            </section>
-          </li>
-        </ul>
-        <p><a href="#">Все отзывы</a></p>
-      </section>
-
+<!--       <div class="dev-grid"></div> -->
     </div>
-  </div>
 
+  </div>
 </div>
 
 {% endblock %}

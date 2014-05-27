@@ -4,7 +4,7 @@
 # Susy (susy.oddbird.net) is available in Mixture, just uncomment to require and use
 # require 'susy'
 require 'sass-globbing'
-require 'autoprefixer-rails'
+# require 'autoprefixer-rails'
 
 project_path = File.expand_path("..",File.dirname(__FILE__))
 
@@ -24,9 +24,9 @@ cache = true
 
 Sass::Script::Number.precision = 14
 
-on_stylesheet_saved do |file|
-  css = File.read(file)
-  File.open(file, 'w') do |io|
-    io << AutoprefixerRails.process(css, browsers: ["last 2 versions", "> 5%", "ie 9"])
-  end
-end
+# on_stylesheet_saved do |file|
+#   css = File.read(file)
+#   File.open(file, 'w') do |io|
+#     io << AutoprefixerRails.process(css, browsers: ["last 2 versions", "> 5%", "ie 9"])
+#   end
+# end

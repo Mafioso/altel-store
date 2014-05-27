@@ -1,0 +1,21 @@
+.media
+    @extend %clearfix
+    display: block
+.media-figure
+    position: relative
+    display: block
+    float: left
+.media-figure--label
+    @extend %c-caption
+    width: span(4)
+    padding-top: .25rem
+    padding-right: 1rem
+    color: $secondary-text
+    text-align: right
+
+.media-description
+    position: relative
+    display: block
+    overflow: hidden
+    & > :last-child
+        margin-bottom: 0
