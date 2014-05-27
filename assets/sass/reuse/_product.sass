@@ -1,19 +1,23 @@
 .product-header
   position: relative
   padding-bottom: .5rem
-  margin-bottom: 1.5rem
+  margin-bottom: .5rem
+  > :last-child
+    margin-bottom: 0
   &:after
     position: absolute
     bottom: 0
     width: 100%
     display: block
-    height: 2*$px
+    height: 3px
     background-color: $accent
     content: ''
 
+.product-body
+  margin-bottom: 2rem
+
 .product-title
   @extend %c-h2
-
 .product-price
   @extend %c-h2
   padding-top: 1rem
@@ -35,25 +39,31 @@
   margin: 0 1rem 1rem
   float: right
 
+// .product-description,
+// .product-reviews
+//   padding-top: 1rem
+//   margin-top: 1rem
 .product-description,
-.product-reviews
-  padding-top: 1rem
-  margin-top: 1rem
+.product-reviews,
+.product-specification,
+.product-delivery
+  >:last-child
+    margin-bottom: 0
 
 .product-reviews
-  border-top-width: 3px
+  padding-top: 1rem
+  // border-top-width: 3px
 .product-reviews-header
   position: relative
-  padding-bottom: .5rem
-  margin-bottom: 1.5rem
-  &:after
-    position: absolute
-    bottom: 0
-    width: 100%
-    display: block
-    height: 2*$px
-    background-color: $secondary-text
-    content: ''
+  text-align: center
+  // &:after
+  //   position: absolute
+  //   bottom: 0
+  //   width: 100%
+  //   display: block
+  //   height: $px
+  //   background-color: $secondary-text
+  //   content: ''
   .caption
     margin-bottom: 0
 .product-reviews-title
@@ -101,3 +111,12 @@
     padding: 0
   > :last-child
     margin-bottom: 0
+
+.product-plans
+  margin-bottom: 2rem
+  >:last-child
+    margin-bottom: 0
+
+.product-similar
+  margin-bottom: 2rem
+  background-color: $viewport-background

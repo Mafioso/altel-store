@@ -1,0 +1,23 @@
+<h2 class="c-h3 c-light c-h--compact">Your bag</h2>
+<ul class="cart">
+    {% for i in (1..10) %}
+    <li class="cart-item">
+        <figure class="cart-item-image">
+            {{ "90x90" | placeholder | image_tag }}
+        </figure>
+        <div class="cart-item-description">
+            <a href="#" class="cart-item-remove">&times;</a>
+            <div class="cart-item-name">Sollicitudin Portaddfas asdfasda</div>
+            <div class="cart-item-option">black/white</div>
+            <div class="cart-item-price">
+                13049 T
+                <span class="cart-item-quantity">&times; 1</span>
+            </div>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+<p class="f-field">
+  <strong>Total:</strong>
+  <span class="split-value c-accent">130490 T</span>
+</p>

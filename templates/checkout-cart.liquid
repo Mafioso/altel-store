@@ -1,0 +1,75 @@
+{% block content %}
+<div class="l-container">
+  <div class="box">
+    <div class="box-content">
+      <div class="l-gutter">
+        <h1 class="title-with-separator">Checkout</h1>
+        <table class="rwd-table rwd-table--top caption">
+          <thead>
+            <tr>
+              <th>
+                Product
+              </th>
+              <th>
+                Description
+              </th>
+              <th>
+                Price
+              </th>
+              <th>
+                Quantity
+              </th>
+              <th>Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for i in (1..4) %}
+            <tr>
+              <td class="rwd-table-no-th">
+                {{ "90x90" | placeholder | image_tag }}
+              </td>
+              <td class="rwd-table-no-th">
+                <strong>Sollicitudin Portaddfas asdfasda</strong>
+                <p class="caption">black/white</p>
+              </td>
+              <td class="c-accent" data-th="Price: ">
+                <nobr>120 000 T</nobr>
+              </td>
+              <td data-th="Quantity: ">
+                &times; 2
+              </td>
+              <td class="c-accent" data-th="Total: ">
+                <nobr>= 120 000 T</nobr>
+              </td>
+              <td class="rwd-table-no-th">
+                <a href="#">[remove]</a>
+              </td>
+            </tr>
+            {% endfor %}
+            <tr>
+              <td class="rwd-table-no-th" colspan="3">
+                Secure payments blah-blah-blah
+              </td>
+              <th>
+                Grand total:
+              </th>
+              <td class="c-accent" colspan="2" data-th="Grand total:">
+                <nobr>120 000 000 Т</nobr>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="f-field">
+          <div class="readable">
+            <div class="l-col d1-2 l-gutter c-text-r l-middle">
+              <a class="btn btn--compact" href="/products">Continue shopping</a>
+            </div><div class="l-col d1-2 l-gutter l-middle">
+              <a href="/checkout-method" class="btn btn--cta">Pay</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

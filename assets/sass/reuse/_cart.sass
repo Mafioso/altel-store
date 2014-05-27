@@ -1,17 +1,13 @@
+.cart
+  @extend %block-list
 .sidebar-extension
   .cart
-    display: block
     width: 100%
-    list-style-type: none
     max-height: 11rem
     overflow-y: scroll
     margin-bottom: 1rem
     >li
       margin: 0
-  .cart-item-image
-    width: 4rem
-    height: 4rem
-  // .cart-item-description
 
 .cart-item
   position: relative
@@ -21,12 +17,13 @@
   border-bottom: $px solid $secondary-text
   margin-bottom: .5rem - $px
 .cart-item-image
-  @extend %abs
-  top: .5rem
-  right: auto
-  bottom: auto
+  float: left
+  width: 4rem
+  height: 4rem
+  padding-top: .5rem
 .cart-item-description
-  padding-left: 4.5rem
+  overflow: hidden
+  padding-left: .5rem
 .cart-item-name
   padding-right: 1rem
   height: 2rem
@@ -39,6 +36,7 @@
   @extend %abs
   left: auto
   bottom: auto
+  text-decoration: none
 .cart-item-option
   @extend %c-caption
   line-height: 1.5rem
