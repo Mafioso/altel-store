@@ -1,8 +1,19 @@
 .product-box
   @extend %c-caption
+  .cover-media
+    background-size: auto 50%
+    background-repeat: no-repeat
+    background-position: 50% 50%
 .product-box-h
   @extend %c-body
+  position: relative
+  height: 5rem
   padding: 1rem
+  overflow: hidden
+  background-color: rgba(white, .8)
+.product-box:hover
+  .product-box-h
+    height: auto
 .product-box-price,
 .product-box-cta
   @extend %abs

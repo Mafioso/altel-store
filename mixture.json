@@ -7,6 +7,9 @@
       "ie 9"
     ]
   },
+  "convertHtml": {
+    "relativePaths": true
+  },
   "customRuby": true,
   "customRubyPath": "/Users/Vadim/.rvm/rubies/ruby-2.1.1|/Users/Vadim/.rvm/gems/ruby-2.1.1",
   "debug": false,
@@ -16,7 +19,9 @@
   "optimiseImages": true,
   "optimiseSVG": true,
   "password": "ohmycss",
-  "preprocessorLocations": "assets",
+  "preprocessorLocations": [
+    "assets"
+  ],
   "preprocessorScriptOutput": "assets/scripts",
   "preprocessorStyleOutput": "assets/css",
   "projectDescription": "Altel store",

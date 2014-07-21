@@ -38,12 +38,13 @@
     </div>
 
   </div><div class="l-col d3-4">
-    {% for i in (1..10) %}<div class="l-col d1-3">
+    <div class="l-col d1-3">
       <div class="box box--ratio ratio-2-3">
         <div class="box-content">
-          <div class="cover-media box-icon-phone product-box">
+          <div class="cover-media product-box">
+            <div class="cover-media" style="background-image: url({{ 'product.png' | asset_url }});"></div>
+            <h2 class="product-box-h">iPhone</h2>
             <a href="/product" class="cover-media"></a>
-            <h2 class="product-box-h">Porta Ligula</h2>
             <div class="product-box-price">12040 T</div>
             <div class="product-box-cta">
               <a class="btn btn--cta btn--compact" href="/product#plans">Выбрать тариф</a>
@@ -51,7 +52,21 @@
           </div>
         </div>
       </div>
-    </div>{% endfor %}
+    </div><div class="l-col d1-3">
+      <div class="box box--ratio ratio-2-3">
+        <div class="box-content">
+          <div class="cover-media product-box">
+            <div class="cover-media" style="background-image: url({{ 'product-2.png' | asset_url }});"></div>
+            <h2 class="product-box-h">Samsung Galaxy S5 SM-G900H 16GB Factory Unlocked International Version - WHITE</h2>
+            <a href="/product-2" class="cover-media"></a>
+            <div class="product-box-price">12040 T</div>
+            <div class="product-box-cta">
+              <a class="btn btn--cta btn--compact" href="/product#plans">Выбрать тариф</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 {% endblock %}
