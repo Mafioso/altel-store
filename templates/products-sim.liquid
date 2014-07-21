@@ -1,0 +1,53 @@
+{% block content %}
+<div class="l-container">
+  <h1 class="title-with-separator">Номера</h1>
+  <div class="l-col d1-4 l-gutter-r">
+    <h2 class="c-body">Refine by:</h2>
+    <div class="refine-section">
+      <h3 class="refine-section-h">Цена</h3>
+      <ul class="refine-section-body">
+        <li>
+          <input id="id{{i}}" type="checkbox" />
+          <label for="id{{i}}" class="refine-section-item">
+            До 15000
+          </label>
+        </li>
+      </ul>
+    </div>
+    <div class="refine-section">
+      <a href="#">Clear all &times;</a>
+    </div>
+
+  </div><div class="l-col d3-4">
+    <div class="l-col d1-3">
+      <div class="box box--ratio ratio-2-3">
+        <div class="box-content">
+          <div class="cover-media product-box">
+            <div class="cover-media box-icon-sim"></div>
+            <h2 class="product-box-h">+7 (708) 0120924</h2>
+            <a href="#" class="cover-media"></a>
+            <div class="product-box-price">12040 T</div>
+            <div class="product-box-cta">
+              <a class="btn btn--cta btn--compact" href="/product#plans">Добавить в корзину</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><div class="l-col d1-3">
+      <div class="box box--ratio ratio-2-3">
+        <div class="box-content">
+          <div class="cover-media product-box">
+            <div class="cover-media box-icon-sim"></div>
+            <h2 class="product-box-h">+7 (708) 0120924</h2>
+            <a href="#" class="cover-media"></a>
+            <div class="product-box-price">12040 T</div>
+            <div class="product-box-cta">
+              <a class="btn btn--cta btn--compact" href="/product#plans">Добавить в корзину</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
